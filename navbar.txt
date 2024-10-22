@@ -1,13 +1,13 @@
+CustomNavbar.js
+
 import React, { useState } from 'react';
-import { Layout, Menu, Row, Col } from 'antd';
+import { Navbar, Nav, Container, Row, Col } from 'react-bootstrap'; // Importing Bootstrap components
 import { PhoneOutlined, MailOutlined } from '@ant-design/icons';
 import FaxIcon from './InputElements/FaxIcon'; // Ensure correct path to FaxIcon
 import logo from '../assets/HKI-2019-Logo.png.webp'; // Ensure correct path to logo
+import './CustomNavbar.css'; // Adjust the path if necessary
 
-const { Header } = Layout;
-
-const Navbar = () => {
-    const [menuVisible, setMenuVisible] = useState(false);
+const CustomNavbar = () => {
     const [current, setCurrent] = useState('1');
 
     // List of menu items
@@ -20,70 +20,102 @@ const Navbar = () => {
         'Locations/Directions',
     ];
 
-    // Generate menu items using forEach
-    const menuItems = menuList.map((item, index) => ({
-        label: item,
-        key: (index + 1).toString(), // Convert index to string for keys
-    }));
-
-    // Toggle mobile menu visibility
-    const toggleMenu = () => {
-        setMenuVisible(!menuVisible);
-    };
-
     // Handle menu item click
-    const handleClick = (e) => {
-        setCurrent(e.key);
+    const handleClick = (key) => {
+        setCurrent(key);
     };
 
     return (
-        <Layout>
-            {/* Top Header with logo, phone, fax, and email */}
-            <div className="bg-pink-100 p-2 border-b border-gray-200">
-                <Row justify="space-between" align="middle" gutter={[8, 8]} className="flex-wrap">
-                    {/* Logo Section */}
-                    <Col xs={24} sm={8} lg={6} className="flex justify-center sm:justify-start">
-                        <img src={logo} alt="Logo" className="w-60 h-auto" />
-                    </Col>
-
-                    {/* Contact Info Section */}
-                    <Col xs={24} sm={16} lg={18} className="flex justify-center sm:justify-end space-x-4">
-                        <div className="border border-blue-800 px-3 py-1 rounded-md text-blue-800 font-bold flex items-center">
-                            <PhoneOutlined className="mr-2" />
-                            (832) 610-2822
-                        </div>
-                        <div className="border border-blue-800 px-3 py-1 rounded-md text-blue-800 font-bold flex items-center">
-                            <FaxIcon className="mr-2" />
-                            (936) 777-8831
-                        </div>
-                        <div className="border border-blue-800 px-3 py-1 rounded-md text-blue-800 font-bold flex items-center">
-                            <MailOutlined className="mr-2" />
-                            healingkidneys@gmail.com
-                        </div>
-                    </Col>
-                </Row>
+        <div>
+            {/* Contact Info Section */}
+            <div className="bg-light py-3 border-b border-gray-200"> {/* Increased padding */}
+                <Container>
+                    <Row className="justify-content-center align-items-center">
+                        <Col xs={12} className="text-center"> {/* Center the text */}
+                            <div className="flex justify-center flex-wrap"> {/* Use flex-wrap for mobile responsiveness */}
+                                <div className="flex items-center border border-gray-300 rounded-lg bg-lightblue-200 mx-2 p-2 contact-info"> {/* Rounded and light blue */}
+                                    <PhoneOutlined className="me-2" />
+                                    (832) 610-2822
+                                </div>
+                                <div className="flex items-center border border-gray-300 rounded-lg bg-lightblue-200 mx-2 p-2 contact-info"> {/* Rounded and light blue */}
+                                    <FaxIcon className="me-2" />
+                                    (936) 777-8831
+                                </div>
+                                <div className="flex items-center border border-gray-300 rounded-lg bg-lightblue-200 mx-2 p-2 contact-info"> {/* Rounded and light blue */}
+                                    <MailOutlined className="me-2" />
+                                    healingkidneys@gmail.com
+                                </div>
+                            </div>
+                        </Col>
+                    </Row>
+                </Container>
             </div>
 
-            <Header className="bg-slate-200 p-0 m-0"> {/* Reduced padding */}
-                <div className="flex justify-between items-center w-full">
-                    {/* Hamburger Icon for Mobile */}
-                    <button className="lg:hidden text-black mr-4" onClick={toggleMenu}>
-                        ☰
-                    </button>
+            {/* Navbar */}
+            <Navbar expand="lg" className="bg-pink-200"> {/* Light pink background */}
+                <Container>
+                    {/* Logo on the left side */}
+                    <Navbar.Brand href="#">
+                        <img src={logo} alt="Logo" style={{ width: '170px' }} />
+                    </Navbar.Brand>
 
-                    {/* Responsive Menu */}
-                    <Menu
-                        theme="light"
-                        mode="horizontal"
-                        selectedKeys={[current]}
-                        onClick={handleClick}
-                        items={menuItems} // Use items instead of children
-                        className={`${menuVisible ? 'block' : 'hidden'} bg-slate-200 font-bold lg:flex lg:justify-center w-full`}
-                    />
-                </div>
-            </Header>
-        </Layout>
+                    {/* Hamburger for mobile view */}
+                    <Navbar.Toggle aria-controls="navbar-nav" />
+
+                    {/* Navbar links */}
+                    <Navbar.Collapse id="navbar-nav">
+                        <Nav className="ms-auto">
+                            {menuList.map((item, index) => (
+                                <Nav.Link
+                                    key={index}
+                                    href={`#${item.toLowerCase().replace(/ /g, '-')}`}
+                                    onClick={() => handleClick((index + 1).toString())}
+                                    active={current === (index + 1).toString()}
+                                    className="px-4 nav-link-custom" 
+                                >
+                                    {item}
+                                </Nav.Link>
+                            ))}
+                        </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
+        </div>
     );
 };
 
-export default Navbar;
+export default CustomNavbar;
+
+
+CustomNavbar.css
+
+/* Add styles for contact info section */
+.contact-info {
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+    padding: 8px; /* Ensure padding is consistent */
+}
+
+.contact-info:hover {
+    background-color: #f0f0f0; /* Change background on hover */
+    color: #007bff; /* Change text color on hover */
+    cursor: pointer; /* Show pointer cursor on hover */
+}
+
+/* Add styles for navbar links */
+.nav-link-custom {
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+}
+
+.nav-link-custom:hover {
+    background-color: #e7f1ff; /* Change background on hover */
+    color: #007bff; /* Change text color on hover */
+}
+
+/* Make contact info section responsive */
+@media (max-width: 576px) {
+    .contact-info {
+        flex: 1 0 100%; /* Stack items on small screens */
+        margin-bottom: 10px; /* Add space between items */
+    }
+}
+
