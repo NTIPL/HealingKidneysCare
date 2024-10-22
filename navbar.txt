@@ -1,0 +1,89 @@
+import React, { useState } from 'react';
+import { Layout, Menu, Row, Col } from 'antd';
+import { PhoneOutlined, MailOutlined } from '@ant-design/icons';
+import FaxIcon from './InputElements/FaxIcon'; // Ensure correct path to FaxIcon
+import logo from '../assets/HKI-2019-Logo.png.webp'; // Ensure correct path to logo
+
+const { Header } = Layout;
+
+const Navbar = () => {
+    const [menuVisible, setMenuVisible] = useState(false);
+    const [current, setCurrent] = useState('1');
+
+    // List of menu items
+    const menuList = [
+        'Home',
+        'Physicians',
+        'Services',
+        'Patient Registration',
+        'Education',
+        'Locations/Directions',
+    ];
+
+    // Generate menu items using forEach
+    const menuItems = menuList.map((item, index) => ({
+        label: item,
+        key: (index + 1).toString(), // Convert index to string for keys
+    }));
+
+    // Toggle mobile menu visibility
+    const toggleMenu = () => {
+        setMenuVisible(!menuVisible);
+    };
+
+    // Handle menu item click
+    const handleClick = (e) => {
+        setCurrent(e.key);
+    };
+
+    return (
+        <Layout>
+            {/* Top Header with logo, phone, fax, and email */}
+            <div className="bg-pink-100 p-2 border-b border-gray-200">
+                <Row justify="space-between" align="middle" gutter={[8, 8]} className="flex-wrap">
+                    {/* Logo Section */}
+                    <Col xs={24} sm={8} lg={6} className="flex justify-center sm:justify-start">
+                        <img src={logo} alt="Logo" className="w-60 h-auto" />
+                    </Col>
+
+                    {/* Contact Info Section */}
+                    <Col xs={24} sm={16} lg={18} className="flex justify-center sm:justify-end space-x-4">
+                        <div className="border border-blue-800 px-3 py-1 rounded-md text-blue-800 font-bold flex items-center">
+                            <PhoneOutlined className="mr-2" />
+                            (832) 610-2822
+                        </div>
+                        <div className="border border-blue-800 px-3 py-1 rounded-md text-blue-800 font-bold flex items-center">
+                            <FaxIcon className="mr-2" />
+                            (936) 777-8831
+                        </div>
+                        <div className="border border-blue-800 px-3 py-1 rounded-md text-blue-800 font-bold flex items-center">
+                            <MailOutlined className="mr-2" />
+                            healingkidneys@gmail.com
+                        </div>
+                    </Col>
+                </Row>
+            </div>
+
+            <Header className="bg-slate-200 p-0 m-0"> {/* Reduced padding */}
+                <div className="flex justify-between items-center w-full">
+                    {/* Hamburger Icon for Mobile */}
+                    <button className="lg:hidden text-black mr-4" onClick={toggleMenu}>
+                        ☰
+                    </button>
+
+                    {/* Responsive Menu */}
+                    <Menu
+                        theme="light"
+                        mode="horizontal"
+                        selectedKeys={[current]}
+                        onClick={handleClick}
+                        items={menuItems} // Use items instead of children
+                        className={`${menuVisible ? 'block' : 'hidden'} bg-slate-200 font-bold lg:flex lg:justify-center w-full`}
+                    />
+                </div>
+            </Header>
+        </Layout>
+    );
+};
+
+export default Navbar;
