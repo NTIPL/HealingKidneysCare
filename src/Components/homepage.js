@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Locations from './Locations'; // Adjust the path as necessary
+import PatientReviews from './PatientReviews'; // Adjust the path as necessary
 import Slider from 'react-slick';
 import Image1 from '../assets/hki-group-providers2.jpg.webp'; // Ensure the correct paths
 import Image2 from '../assets/shutterstock_692941057.jpg.webp';
@@ -113,6 +115,16 @@ const Homepage = () => {
                     ))}
                 </div>
             </div>
+
+            {/* Patient Reviews component */}
+            <section>
+                <PatientReviews />
+            </section>
+
+            {/* Locations component */}
+            <section>
+                <Locations />
+            </section>
 
         </div>
     );
