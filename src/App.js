@@ -9,6 +9,11 @@ import EducationPage from "./Components/Education";
 import BlogPage from './Components/Blog';
 import Footer from "./Components/footer";
 import DialysisPage from "./Components/Dialysis";
+import HypertensionPage from "./Components/Hypertension";
+import KidneyDiseasePage from "./Components/KidneyDisease";
+import KidneyDoctorPage from "./Components/KidneyDoctor";
+import KidneyStonesPage from "./Components/KidneyStones";
+import PatientRegistrationPage from "./Components/PatientRegistration";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -25,6 +30,11 @@ function App() {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/education" element={<EducationPage />} />
           <Route path="/services/dialysis" element={<DialysisPage />} />
+          <Route path="services/hypertension" element={<HypertensionPage />} />
+          <Route path="/services/kidney-disease" element={<KidneyDiseasePage />} />
+          <Route path="/services/kidney-doctor" element={<KidneyDoctorPage />} />
+          <Route path="/services/kidney-stones" element={<KidneyStonesPage />} />
+          <Route path="/patient-registration" element={<PatientRegistrationPage />} />
           <Route path="/education/blog" element={<BlogPage />} />
           {/* Add more routes as needed */}
         </Routes>
