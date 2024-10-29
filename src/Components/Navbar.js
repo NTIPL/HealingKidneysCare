@@ -1,113 +1,98 @@
-import React, { useState } from 'react';
-import { Layout, Menu, Row, Col } from 'antd';
-import { PhoneOutlined, MailOutlined } from '@ant-design/icons'; // Import necessary icons
-import FaxIcon from './../assets/FaxIcon'; // Ensure correct path to FaxIcon
-import logo from '../assets/HKI-2019-Logo.png.webp'; // Ensure correct path to logo
+import React from 'react';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import Image from 'react-bootstrap/Image';
+import { PhoneOutlined, MailOutlined } from '@ant-design/icons'; // Make sure to import icons you're using
+import FaxIcon from '../assets/FaxIcon'; // Adjust the path accordingly
+import Row from 'react-bootstrap/Row'; // Import Row
+import Col from 'react-bootstrap/Col'; // Import Col
 
-const { Header } = Layout;
-
-const Navbar = () => {
-    const [menuVisible, setMenuVisible] = useState(false);
-    const [current, setCurrent] = useState('1'); // Add state to track current menu item
-
-    const toggleMenu = () => {
-        setMenuVisible(!menuVisible);
-    };
-
-    const handleClick = (e) => {
-        setCurrent(e.key); // Update the current selected menu item
-    };
+const CustomNavbar = () => {
+    const mainLinks = [
+        { name: "Home", href: "#home" },
+        { name: "Physicians", href: "#physicians" },
+        { name: "Services", isDropdown: true },
+        { name: "Patient Registration", href: "#patient-registration" },
+        { name: "Education", isDropdown: true },
+        { name: "Locations/Directions", href: "#locations-directions" }
+    ];
+    
+    const educationLinks = ["Blog"];
+    const servicesLinks = ["Dialysis", "Hypertension", "Kidney Disease", "What is a Kidney Doctor?", "Kidney Stones"];
 
     return (
-        <Layout>
-            {/* Top Header with logo, mobile number, fax, and email */}
-            <div className="bg-pink p-4 border-b border-gray-200">
-                <Row justify="space-between" align="middle" gutter={[16, 16]} className="flex-wrap">
-                    {/* Logo Section */}
-                    <Col xs={24} sm={8} lg={6} className="flex justify-center sm:justify-start">
-                        <div className="flex items-center">
-                            <img src={logo} alt="Logo" className="w-40 h-auto mr-2" />
-                        </div>
-                    </Col>
-
-                    {/* Contact Info Section */}
-                    <Col xs={24} sm={16} lg={18} className="flex justify-center sm:justify-end">
-                        <div className="flex space-x-4">
-                            <div className="border border-blue-500 px-4 py-2 rounded-md text-blue-500 flex items-center">
-                                <PhoneOutlined className="mr-2" />
-                                (832) 610-2822
+        <>
+            {/* Contact Info Section */}
+            <div className="bg-gray-200 py-1 border-b border-gray-200"> {/* Increased padding */}
+                <Container>
+                    <Row className="justify-content-center align-items-center">
+                        <Col xs={12} className="text-center"> {/* Center the text */}
+                            <div className="flex justify-center font-bold flex-wrap "> {/* Use flex-wrap for mobile responsiveness */}
+                                <div className="flex items-center my-1 border border-black rounded-lg bg-lightblue-200 mx-2 p-2 hover:bg-blue-200 cursor-pointer contact-info">
+                                    <PhoneOutlined className="me-2" />
+                                    (832) 610-2822
+                                </div>
+                                <div className="flex items-center my-1 border border-black rounded-lg bg-lightblue-200 mx-2 p-2 hover:bg-blue-200 cursor-pointer contact-info">
+                                    <FaxIcon className="me-2" />
+                                    (936) 777-8831
+                                </div>
+                                <div className="flex items-center my-1 border border-black rounded-lg bg-lightblue-200 mx-2 p-2 hover:bg-blue-200 cursor-pointer contact-info">
+                                    <MailOutlined className="me-2" />
+                                    healingkidneys@gmail.com
+                                </div>
                             </div>
-                            <div className="border border-blue-500 px-4 py-2 rounded-md text-blue-500 flex items-center">
-                                <FaxIcon className="text-xl mr-2" />
-                                (936) 777-8831
-                            </div>
-                            <div className="border border-blue-500 px-4 py-2 rounded-md text-blue-500 flex items-center">
-                                <MailOutlined className="mr-2" />
-                                <span>healingkidneys@gmail.com</span>
-                            </div>
-                        </div>
-                    </Col>
-                </Row>
+                        </Col>
+                    </Row>
+                </Container>
             </div>
 
-            <Header className="bg-blue-500 p-0">
-                <div className="flex justify-center items-center w-full">
-                    {/* Hamburger Icon for Mobile Only */}
-                    <div className="lg:hidden mr-4" onClick={toggleMenu}>
-                        <button className="text-white">
-                            ☰
-                        </button>
-                    </div>
-
-                    {/* Responsive Menu for Desktop and Mobile */}
-                    <Menu
-                        theme="light"
-                        mode="horizontal"
-                        selectedKeys={[current]} // Add selected key prop
-                        onClick={handleClick} // Add onClick handler
-                        className={`bg-green-500 text-black ${menuVisible ? 'block' : 'hidden'} lg:flex lg:justify-center w-full`}
-                    >
-                        <Menu.Item
-                            key="1"
-                            className={`flex-1 text-center px-12 py-1 ${current === '1' ? 'text-red-400' : 'text-black'} hover:bg-blue-700`} // Increased padding
-                        >
-                            <a className={`${current === '1' ? 'text-red-400' : 'text-black'} font-bold hover:text-white`} href="#home">Home</a>
-                        </Menu.Item>
-                        <Menu.Item
-                            key="2"
-                            className={`flex-1 text-center px-12 py-1 ${current === '2' ? 'text-red-400' : 'text-black'} hover:bg-blue-700`} // Increased padding
-                        >
-                            <a className={`${current === '2' ? 'text-red-400' : 'text-black'} font-bold hover:text-white`} href="#about">Physicians</a>
-                        </Menu.Item>
-                        <Menu.Item
-                            key="3"
-                            className={`flex-1 text-center px-12 py-1 ${current === '3' ? 'text-red-400' : 'text-black'} hover:bg-blue-700`} // Increased padding
-                        >
-                            <a className={`${current === '3' ? 'text-red-400' : 'text-black'} font-bold hover:text-white`} href="#service">Services</a>
-                        </Menu.Item>
-                        <Menu.Item
-                            key="4"
-                            className={`flex-1 text-center px-12 py-1 ${current === '4' ? 'text-red-400' : 'text-black'} hover:bg-blue-700`} // Increased padding
-                        >
-                            <a className={`${current === '4' ? 'text-red-400' : 'text-black'} font-bold hover:text-white`} href="#doctor">Patient Registration</a>
-                        </Menu.Item>
-                        <Menu.Item
-                            key="5"
-                            className={`flex-1 text-center px-12 py-1 ${current === '5' ? 'text-red-400' : 'text-black'} hover:bg-blue-700`} // Increased padding
-                        >
-                            <a className={`${current === '5' ? 'text-red-400' : 'text-black'} font-bold hover:text-white`} href="#pages">Education</a>
-                        </Menu.Item>
-                        <Menu.Item
-                            key="6"
-                            className={`flex-1 text-center px-12 py-1 ${current === '6' ? 'text-red-400' : 'text-black'} hover:bg-blue-700`} // Increased padding
-                        >
-                            <a className={`${current === '6' ? 'text-red-400' : 'text-black'} font-bold hover:text-white`} href="#blog">Locations/Directions</a>
-                        </Menu.Item>
-                    </Menu>
-                </div>
-            </Header>
-        </Layout>
+            {/* Navbar Section */}
+            <Navbar expand="lg" className="sticky-top bg-white shadow">
+                <Container className="justify-center">
+                    <Navbar.Brand href="#home" className="flex items-center">
+                        <Image
+                            src={require('../assets/HKI-2019-Logo.png.webp')} // Add the path to your logo here
+                            alt="Logo"
+                            width="170"
+                            height="60"
+                            className="me-2"
+                        />
+                    </Navbar.Brand>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav" className="justify-center">
+                        <Nav className="text-black font-bold">
+                            {/* Rendering main links */}
+                            {mainLinks.map((link, index) => {
+                                if (link.isDropdown) {
+                                    return (
+                                        <NavDropdown title={<span className="text-black font-bold">{link.name}</span>} id={`dropdown-${index}`} className="px-3" key={index}>
+                                            {link.name === "Services" && servicesLinks.map((service, serviceIndex) => (
+                                                <NavDropdown.Item key={serviceIndex} href={`#${service.toLowerCase().replace(/\s+/g, '-')}`} className="text-black font-bold">
+                                                    {service}
+                                                </NavDropdown.Item>
+                                            ))}
+                                            {link.name === "Education" && educationLinks.map((education, educationIndex) => (
+                                                <NavDropdown.Item key={educationIndex} href={`#${education.toLowerCase().replace(/\s+/g, '-')}`} className="text-black font-bold">
+                                                    {education}
+                                                </NavDropdown.Item>
+                                            ))}
+                                        </NavDropdown>
+                                    );
+                                }
+                                return (
+                                    <Nav.Link key={index} href={link.href} className="px-3 text-black font-bold">
+                                        {link.name}
+                                    </Nav.Link>
+                                );
+                            })}
+                        </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
+        </>
     );
-};
+}
 
-export default Navbar;
+export default CustomNavbar;
