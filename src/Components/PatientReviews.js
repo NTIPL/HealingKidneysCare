@@ -89,7 +89,7 @@ const PatientReviews = () => {
                             <div className="text-yellow-500 text-xl mb-4">{review.rating}</div>
                             <h3 className="font-bold text-base text-gray-800 mb-2">{review.name}</h3>
                             <p className="text-base text-left text-gray-600">{review.description}</p>
-                            <button className="bg-blue-500 text-white px-4 py-2 rounded-full mt-4 hover:bg-blue-800">
+                            <button className="bg-blue-500 font-bold text-white px-4 py-2 rounded-full mt-4 hover:bg-blue-800">
                                 READ MORE
                             </button>
                         </div>
@@ -99,7 +99,7 @@ const PatientReviews = () => {
 
                 {/* Load More Button */}
                 < div className="text-center mt-6" >
-                    <button className="bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-800">
+                    <button className="bg-blue-500 font-bold text-white px-6 py-2 rounded-full hover:bg-blue-800">
                         LOAD MORE
                     </button>
                 </div>
