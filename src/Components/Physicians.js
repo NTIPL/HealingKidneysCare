@@ -81,11 +81,13 @@ const physicians = [
 
 const PhysicianPage = () => {
     return (
-        <div className="bg-gray-100 py-10">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+        // <div className="bg-gray-100 py-10">
+        <div className="bg-gray-100 min-h-screen py-10 px-4 sm:px-6 lg:px-8">
+
+            <div className="max-w-5xl mx-auto ">
                 <div className="mb-8 text-center">
-                    <h1 className="text-4xl font-bold text-gray-800">Our Physicians</h1>
-                    <p className="text-gray-600 text-xl text-left mt-3">
+                    <h1 className="text-4xl font-bold text-gray-700">Staff</h1>
+                    <p className="text-gray-700 text-base text-left mt-3">
                         Our team of Providers are committed to providing excellent kidney care for patients in North Houston, Spring, The Woodlands & Conroe areas.
                         Our providers see patients both at the hospitals, in clinic, and at dialysis centers for continuity of care. We strive to coordinate
                         and inform other providers involved in your care, so we achieve the best possible outcomes in caring for you.

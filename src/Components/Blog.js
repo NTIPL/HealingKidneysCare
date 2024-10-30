@@ -161,7 +161,8 @@ const BlogPage = () => {
 
             </div>
 
-            <div className="bg-gray-100 min-h-screen py-4 px-4 sm:px-6 lg:pb-8">
+            {/* <div className="bg-gray-100 min-h-screen py-4 mt-10 px-4 sm:px-6 lg:pb-8"> */}
+            <div className="bg-gray-100 mt-10">
                 <div className="max-w-5xl mx-auto bg-white shadow-lg rounded-lg p-4">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {/* Location Section */}

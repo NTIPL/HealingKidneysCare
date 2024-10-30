@@ -2,14 +2,15 @@ import React from 'react';
 
 const PatientRegistrationPage = () => {
     return (
-        <div className="bg-gray-100 min-h-screen py-10 px-4 sm:px-6 lg:px-8">
+        // <div className="bg-gray-100 min-h-screen py-10 px-4 sm:px-6 lg:px-8">
+        <div className="bg-gray-100 py-10 px-4 sm:px-6 lg:px-8">
             <div className="max-w-5xl mx-auto bg-white shadow-lg rounded-lg p-8">
                 {/* Header */}
                 <h2 className="text-3xl font-bold text-gray-800 mb-6">New Patients</h2>
 
                 {/* Introduction */}
                 <p className="text-gray-700 leading-relaxed mb-8">
-                    All new patients are required to fill the new patient package with demographics, medical background, financial disclosure, and patient privacy forms. 
+                    All new patients are required to fill the new patient package with demographics, medical background, financial disclosure, and patient privacy forms.
                     Please arrive 15 minutes prior to your appointment if you are unable to fill these forms.
                 </p>
 

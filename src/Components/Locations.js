@@ -21,17 +21,17 @@ const Locations = () => {
     ];
 
     return (
-        <div className="bg-gray-100 py-1">
+        <div className="bg-gray-100">
         {/* Locations */}
-        <div className="container mx-auto px-4 mt-10 mb-10">
+        <div className="max-w-5xl mx-auto mt-10">
                 {/* Centered heading for all locations */}
-                <h3 className="font-bold text-center">Find Us Here:</h3>
+                {/* <h3 className="font-bold text-center">Find Us Here:</h3> */}
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 bg-white p-6 mt-2 rounded-lg shadow-lg">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-2 bg-white p-4 mt-2 rounded-lg shadow-lg">
                     {locations.map((location, index) => (
-                        <div key={index} className="text-center border rounded-lg mt-5 shadow-lg p-3">
+                        <div key={index} className="text-center border rounded-lg mt-4 shadow-lg p-3">
                             {/* Location name */}
-                            <h2 className="font-bold text-xl mb-4">{location.name}</h2>
+                            <h2 className="text-gray-700 font-bold text-xl mb-4">{location.name}</h2>
                             {/* Location address */}
                             <p className="text-gray-700 whitespace-pre-line mb-4">{location.address}</p>
 
