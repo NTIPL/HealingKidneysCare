@@ -6,7 +6,7 @@ const HypertensionPage = () => {
         <div className="bg-gray-100 min-h-screen py-10 px-4 sm:px-6 lg:px-8">
             <div className="max-w-5xl mx-auto bg-white shadow-lg rounded-lg p-8">
                 {/* Header - Centered for impact */}
-                <h2 className="text-3xl font-bold text-gray-800 mb-6">Hypertension</h2>
+                <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-600 mb-6">Hypertension</h2>
 
                 {/* Flex container for image and first paragraph */}
                 <div className="flex flex-col mb-8 lg:flex-row">
@@ -25,7 +25,7 @@ const HypertensionPage = () => {
                 </div>
 
                 {/* Remaining Content */}
-                <h3 className="text-2xl text-gray-700 font-semibold mt-6 mb-2">Dealing With Hypertension</h3>
+                <h3 className="text-lg md:text-xl lg:text-2xl text-gray-600 font-semibold mt-6 mb-2">Dealing With Hypertension</h3>
                 <p className="text-gray-700 leading-relaxed mb-8">
                     Hypertension occurs when the force of blood against the walls of the arteries is consistently too high.
                     This then places strain on the heart and blood vessels, increasing the risk of heart attack, stroke, and other cardiovascular diseases.
@@ -53,7 +53,7 @@ const HypertensionPage = () => {
                 <p className="text-gray-700 leading-relaxed mb-8">
                     It’s also crucial that you find ways to manage stress and promote relaxation.
                 </p>
-                <h3 className="text-2xl text-gray-700 font-semibold mt-6 mb-2">Contact Our Doctor Today</h3>
+                <h3 className="text-lg md:text-xl lg:text-2xl text-gray-600 font-semibold mt-6 mb-2">Contact Our Doctor Today</h3>
                 <p className="text-gray-700 leading-relaxed mb-8">
                     Make sure that you’re not ignoring hypertension and that you understand the factors in your life that could lead to it.
                     Contact our doctors at <span className='text-blue-500 hover:text-blue-800 hover:underline font-bold'>Healing Kidneys</span>

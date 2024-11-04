@@ -15,9 +15,15 @@ import KidneyDoctorPage from "./Components/KidneyDoctor";
 import KidneyStonesPage from "./Components/KidneyStones";
 import PatientRegistrationPage from "./Components/PatientRegistration";
 import DirectionPage from "./Components/Direction";
+import SignSymptomPage from './Components/SignSymptom';
+import HowNephrologistsPage from './Components/HowNephrologists';
+import UnderstandingHypertensionPage from './Components/UnderstandingHypertension';
+import KidneyStonesCausesPage from './Components/KidneyStonesCauses';
+import WelcomeBlogPage from './Components/WelcomeBlog';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+
 
 function App() {
   return (
@@ -31,13 +37,20 @@ function App() {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/education" element={<EducationPage />} />
           <Route path="/services/dialysis" element={<DialysisPage />} />
-          <Route path="services/hypertension" element={<HypertensionPage />} />
+          <Route path="/services/hypertension" element={<HypertensionPage />} />
           <Route path="/services/kidney-disease" element={<KidneyDiseasePage />} />
           <Route path="/services/kidney-doctor" element={<KidneyDoctorPage />} />
           <Route path="/services/kidney-stones" element={<KidneyStonesPage />} />
           <Route path="/patient-registration" element={<PatientRegistrationPage />} />
           <Route path="/education/blog" element={<BlogPage />} />
-          <Route path="//locations-directions" element={<DirectionPage />} />
+          <Route path="/locations-directions" element={<DirectionPage />} />
+          <Route path="/signs-symptoms-kidney-stones-want-to-see-a-doctor" element={<SignSymptomPage />} />
+          <Route path="/how-nephrologists-diagnose-kidney-disorders" element={<HowNephrologistsPage />} />
+          <Route path="/understanding-hypertension-causes-symptoms-and-risk-factors" element={<UnderstandingHypertensionPage />} />
+          <Route path="/kidney-stones-causes-for-concern" element={<KidneyStonesCausesPage />} />
+          <Route path="/welcome-to-our-blog" element={<WelcomeBlogPage />} />
+          
+          
           {/* Add more routes as needed */}
         </Routes>
         <Footer />

@@ -5,8 +5,8 @@ const DialysisPage = () => {
         <div className="bg-gray-100 min-h-screen py-10 px-4 sm:px-6 lg:px-8">
             <div className="max-w-5xl mx-auto bg-white shadow-lg rounded-lg p-8">
                 {/* Header */}
-                <h2 className="text-3xl font-bold text-gray-800 mb-4">Dialysis</h2>
-                <h3 className="text-2xl font-semibold text-gray-700 mb-4">
+                <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-600 mb-4">Dialysis</h2>
+                <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-gray-600 mb-4">
                     Dialysis in Houston, Conroe and The Woodlands, TX
                 </h3>
                 <p className="text-gray-700 leading-relaxed mb-8">
@@ -18,7 +18,7 @@ const DialysisPage = () => {
                     and state-of-the-art facilities dedicate time to providing exceptional dialysis treatment and specialized care to support you on your journey to better health.
                 </p>
 
-                <h3 className="text-2xl font-semibold text-gray-700 mb-4">Dialysis: Explained</h3>
+                <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-gray-600 mb-4">Dialysis: Explained</h3>
                 <p className="text-gray-700 leading-relaxed mb-8">
                     Dialysis is a life-saving medical procedure that helps individuals whose kidneys can no longer function properly. The kidneys filter waste and excess
                     fluids from the blood, maintaining electrolyte balance and producing hormones. When they fail due to chronic kidney disease, diabetes, or other conditions,
@@ -30,7 +30,7 @@ const DialysisPage = () => {
                     intervention that provides hope and support for those facing kidney failure.
                 </p>
 
-                <h3 className="text-2xl font-semibold text-gray-700 mb-4">What To Expect From Dialysis Treatment</h3>
+                <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-gray-600 mb-4">What To Expect From Dialysis Treatment</h3>
                 <p className="text-gray-700 leading-relaxed mb-8">
                     Dialysis treatment is a life-saving procedure for individuals with kidney failure. During sessions, patients sit comfortably in a chair while a dialysis
                     machine filters their blood, replicating the kidney's cleansing function. Though it may seem daunting, the process is painless and well-monitored by healthcare

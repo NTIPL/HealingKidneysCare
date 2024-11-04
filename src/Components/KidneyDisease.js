@@ -5,16 +5,16 @@ const KidneyDiseasePage = () => {
         <div className="bg-gray-100 min-h-screen py-10 px-4 sm:px-6 lg:px-8">
             <div className="max-w-5xl mx-auto bg-white shadow-lg rounded-lg p-8">
                 {/* Header - Centered for impact */}
-                <h2 className="text-3xl font-bold text-gray-800 mb-6">Kidney Disease</h2>
+                <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-600 mb-6">Kidney Disease</h2>
 
                 {/* Introduction Section */}
-                <h3 className="text-2xl text-gray-700 font-semibold mt-6 mb-2">Kidney Disease Treatment in Houston, Conroe, and The Woodlands, TX</h3>
+                <h3 className="text-lg md:text-xl lg:text-2xl text-gray-600 font-semibold mt-6 mb-2">Kidney Disease Treatment in Houston, Conroe, and The Woodlands, TX</h3>
                 <p className="text-gray-700 leading-relaxed mb-8">
                     While we don’t often think about it, our kidneys do so much for us! These organs are essential for filtering out toxins and waste from the bloodstream while also delivering important nutrients, vitamins, and hormones throughout the body. When kidneys don’t function properly, it's important to turn to our experienced nephrologists at The Healing Kidneys Institute of Houston for comprehensive care.
                 </p>
 
                 {/* Kidney Problems Section */}
-                <h3 className="text-2xl text-gray-700 font-semibold mt-6 mb-2">Types of Kidney Problems</h3>
+                <h3 className="text-lg md:text-xl lg:text-2xl text-gray-600 font-semibold mt-6 mb-2">Types of Kidney Problems</h3>
                 <p className="text-gray-700 leading-relaxed mb-8">
                     Various acute and chronic issues can impact the health and function of the kidneys. Some of the most common kidney problems we diagnose and treat include:
                 </p>
@@ -28,7 +28,7 @@ const KidneyDiseasePage = () => {
                 </ul>
 
                 {/* Causes Section */}
-                <h3 className="text-2xl text-gray-700 font-semibold mt-6 mb-2">What Causes Kidney Disease?</h3>
+                <h3 className="text-lg md:text-xl lg:text-2xl text-gray-600 font-semibold mt-6 mb-2">What Causes Kidney Disease?</h3>
                 <p className="text-gray-700 leading-relaxed mb-8">
                 There are many risk factors and issues that can lead to chronic kidney disease. 
                 It’s important to recognize your risk factors so you can talk with our nephrologists about ways to reduce your risk for kidney issues now and in the future. 
@@ -45,7 +45,7 @@ const KidneyDiseasePage = () => {
                 </ul>
 
                 {/* Symptoms Section */}
-                <h3 className="text-2xl text-gray-700 font-semibold mt-6 mb-2">Signs and Symptoms of Kidney Disease</h3>
+                <h3 className="text-lg md:text-xl lg:text-2xl text-gray-600 font-semibold mt-6 mb-2">Signs and Symptoms of Kidney Disease</h3>
                 <p className="text-gray-700 leading-relaxed mb-8">
                 The warning signs of kidney disease are not unique to this condition, so you may not immediately recognize that you could be dealing with kidney issues. 
                 It’s important to turn to us right away if you notice these symptoms:
@@ -65,7 +65,7 @@ const KidneyDiseasePage = () => {
                 </ul>
 
                 {/* Treatment Section */}
-                <h3 className="text-2xl text-gray-700 font-semibold mt-6 mb-2">Treating Kidney Disease</h3>
+                <h3 className="text-lg md:text-xl lg:text-2xl text-gray-600 font-semibold mt-6 mb-2">Treating Kidney Disease</h3>
                 <p className="text-gray-700 leading-relaxed mb-8">
                 We will first need to determine what’s causing your symptoms before we can determine how to best treat it. 
                 After all, how we address acute kidney problems will be different from how we treat chronic kidney issues. 

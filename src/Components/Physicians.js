@@ -86,7 +86,7 @@ const PhysicianPage = () => {
 
             <div className="max-w-5xl mx-auto ">
                 <div className="mb-8 text-center">
-                    <h1 className="text-4xl font-bold text-gray-700">Staff</h1>
+                    <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-600">Staff</h1>
                     <p className="text-gray-700 text-base text-left mt-3">
                         Our team of Providers are committed to providing excellent kidney care for patients in North Houston, Spring, The Woodlands & Conroe areas.
                         Our providers see patients both at the hospitals, in clinic, and at dialysis centers for continuity of care. We strive to coordinate

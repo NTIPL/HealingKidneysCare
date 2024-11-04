@@ -1,58 +1,8 @@
 import React from 'react';
-import image8 from '../assets/kidney_stone_doctor.jpg';
-import image9 from '../assets/Nephrologists.jpg';
-import image10 from '../assets/Hypertension_kidney.jpg';
-import image11 from '../assets/Kidney_Stones.jpg';
 import InputMask from 'react-input-mask';
+import Images13 from '../assets/Nephrologists.jpg';
 
-const BlogPage = () => {
-    const blogPosts = [
-        {
-            title: "Signs and Symptoms of Kidney Stones: When To See a Doctor",
-            date: "Oct. 24, 2024",
-            content: "Your kidneys are a vital organ that helps cleanse the body by filtering waste to create urine and help produce certain hormones. Therefore, if you have signs of problems such...",
-            image: image8,
-            link: "/signs-symptoms-kidney-stones-want-to-see-a-doctor" // Sample link, update with actual URL if available
-        },
-        {
-            title: "How Nephrologists Diagnose Kidney Disorders",
-            date: "Aug. 13, 2024",
-            content: "Nephrologists are specialists in kidney care who use a variety of diagnostic tools and methods to identify and manage kidney disorders. Accurate diagnosis is crucial for effective treatment and maintaining...",
-            image: image9,
-            link: "/how-nephrologists-diagnose-kidney-disorders" // Sample link, update with actual URL if available
-        },
-        {
-            title: "Understanding Hypertension: Causes, Symptoms, and Risk Factors",
-            date: "Jun. 10, 2024",
-            content: "The team of providers at The Healing Kidneys Institute of Houston helps patients live well with kidney-related diseases and disorders. Hypertension is a common issue we help treat and manage. Keep...",
-            image: image10,
-            link: "/understanding-hypertension-causes-symptoms-and-risk-factors" // Sample link, update with actual URL if available
-        },
-        {
-            title: "Kidney Stones: Causes for Concern",
-            date: "Dec. 18, 2023",
-            content: "Kidney stones, tiny mineral deposits that form in the kidneys, can bring excruciating pain. Imagine sharp, intense discomfort starting in your back, often radiating to your lower abdomen or groin...",
-            image: image11,
-            link: "/kidney-stones-causes-for-concern" // Sample link, update with actual URL if available
-        },
-        {
-            title: "Welcome to Our Blog",
-            date: "Jul. 10, 2023",
-            content: "The Healing Kidneys Institute of Houston would like to welcome you to our blog. Here you will find informative and useful postings about your nephrology care and our practice. At...",
-            link: "/welcome-to-our-blog" // Sample link, update with actual URL if available
-        },
-    ];
-
-
-    const handleSubmit = (e) => {
-        // Prevent form submission if any input is invalid
-        if (!e.target.checkValidity()) {
-            e.preventDefault(); // Prevent form submission
-            // Optionally display a message or handle invalid input feedback
-            alert('Please fill out the form correctly.');
-        }
-    };
-
+const HowNephrologistsPage = () => {
     const hours = [
         { day: 'Monday', hours: '8:30 am - 5:00 pm' },
         { day: 'Tuesday', hours: '8:30 am - 5:00 pm' },
@@ -63,31 +13,86 @@ const BlogPage = () => {
         { day: 'Sunday', hours: 'Closed' }
     ];
 
+    // Handle form submission
+    const handleSubmit = (e) => {
+        e.preventDefault(); // Prevent default form submission
+
+        // Prevent form submission if any input is invalid
+        if (!e.target.checkValidity()) {
+            alert('Please fill out the form correctly.');
+            return; // Stop further execution
+        }
+
+        // Handle form submission logic here (e.g., sending data to an API)
+        alert('Form submitted successfully!');
+    };
 
     return (
         <div className="bg-gray-100 min-h-screen py-10 px-4 sm:px-6 lg:px-8">
             <div className="max-w-5xl mx-auto bg-white shadow-lg rounded-lg p-8">
-                <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-600 mb-6">Blog</h1>
-                <div className="space-y-8">
-                    {blogPosts.map((post, index) => (
-                        <div key={index} className="flex flex-col sm:flex-row border-b pb-4">
-                            {post.image && (
-                                <img
-                                    src={post.image}
-                                    alt={post.title}
-                                    className="w-auto sm:w-32 h-auto object-cover mr-0 sm:mr-4 rounded"
-                                />
-                            )}
-                            <div className="flex-grow">
-                                <a href={post.link} className="text-lg md:text-xl lg:text-2xl font-bold text-blue-500 no-underline hover:underline">
-                                    {post.title}
-                                </a>
-                                <p className="text-sm text-gray-500">{post.date}</p>
-                                <p className="mt-2">{post.content}</p>
-                                <a href={post.link} className="text-blue-500 font-bold no-underline hover:underline">Read more</a>
-                            </div>
-                        </div>
-                    ))}
+                {/* Header */}
+                <a href='/how-nephrologists-diagnose-kidney-disorders' className="text-lg md:text-xl lg:text-2xl no-underline hover:underline font-bold text-blue-500 mb-2">
+                    How Nephrologists Diagnose Kidney Disorders
+                </a>
+                <p className="text-gray-500 mb-6">Posted on: Aug. 13, 2024.</p> {/* Add the posted date here */}
+
+                {/* Centered image with paragraph below */}
+                <div className="flex flex-col items-center mb-8">
+                    <img
+                        src={Images13}
+                        alt="Medical professional examining kidney stone"
+                        className="rounded-lg shadow-md max-w-full h-auto mb-4"
+                    />
+                    <p className="text-gray-700 leading-relaxed">
+                        Nephrologists are specialists in kidney care who use a variety of diagnostic tools and methods to identify and manage kidney disorders.
+                        Accurate diagnosis is crucial for effective treatment and maintaining overall kidney health.
+                        If you’re dealing with a kidney disorder, it’s important that you’re able to get the proper treatment as soon as possible to avoid certain complications.
+                        Your nephrologists at The Healing Kidneys Institute of Houston in Conroe, the Woodlands, and Houston, TX,
+                        can explain what they do and how a nephrologist can diagnose your kidney disorder.
+                    </p>
+                </div>
+
+                {/* What Are Kidney Stones Section */}
+                <h3 className="text-lg md:text-xl lg:text-2xl text-gray-600 font-semibold mt-6 mb-2">
+                    How Nephrologists Diagnose Kidney Diseases and Disorders
+                </h3>
+                <p className="text-gray-700 leading-relaxed mb-8">
+                    The diagnostic process begins with a thorough consultation.
+                    Your nephrologist in Conroe, the Woodlands, and Houston, TX, will review your medical history, including any symptoms, family history of kidney disease, and any existing health conditions.
+                    This information helps the nephrologist understand your risk factors and potential underlying issues.
+                    A physical examination allows them to assess your general health and identify any physical signs of kidney problems.
+                    They may check for swelling, changes in blood pressure, or other symptoms that could indicate kidney dysfunction.
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-8">
+                    Your nephrologist may recommend blood tests, urinalysis, or urine cultures to detect different types of disorders.
+                    This can help spot different indications of certain disorders and determine the best treatment.
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-8">
+                    Your nephrologist might also want to perform imaging tests.
+                    This can include an ultrasound, CT scan, or MRI.
+                    In some cases, you may need a kidney biopsy.
+                    This procedure involves taking a small sample of kidney tissue to examine under a microscope.
+                    It helps diagnose specific types of kidney disease, determine the extent of damage, and guide treatment options.
+                </p>
+
+                {/* Contact Section */}
+                <h3 className="text-lg md:text-xl lg:text-2xl text-gray-600 font-semibold mt-6 mb-2">
+                Contact Our Nephrologists Today 
+                </h3>
+                <p className="text-gray-700 leading-relaxed mb-8">
+                Make sure you understand how nephrologists work and how they can test for kidney disorders. 
+                Contact your nephrologists at The Healing Kidneys Institute of Houston in Conroe, the Woodlands, and Houston, TX, to learn more about kidney testing. 
+                Call for more information and to schedule your appointment today at <a href="tel:8326102822" className="text-blue-500 no-underline hover:text-blue-800 hover:underline font-bold">(832) 610-2822</a>.
+                </p>
+
+                <hr className="border-t border-black"></hr>
+
+                {/* Tags */}
+                <div className="mt-1">
+                    <span className="text-sm text-gray-600">Tags: </span>
+                    <a href='/' className="text-sm no-underline hover:underline font-bold text-blue-500">Nephrologists</a>,
+                    <a href='/' className="text-sm no-underline hover:underline font-bold text-blue-500"> Kidney Disease</a>,
+                    <a href='/' className="text-sm no-underline hover:underline font-bold text-blue-500"> Kidney Disorder</a>
                 </div>
 
                 {/* {Google Form} */}
@@ -164,6 +169,7 @@ const BlogPage = () => {
                         </div>
                     </form>
                 </div>
+
             </div>
 
             {/* <div className="bg-gray-100 min-h-screen py-4 mt-10 px-4 sm:px-6 lg:pb-8"> */}
@@ -214,11 +220,8 @@ const BlogPage = () => {
                 </div>
             </div>
 
-
-
-
         </div>
     );
 };
 
-export default BlogPage;
+export default HowNephrologistsPage;

@@ -1,58 +1,7 @@
 import React from 'react';
-import image8 from '../assets/kidney_stone_doctor.jpg';
-import image9 from '../assets/Nephrologists.jpg';
-import image10 from '../assets/Hypertension_kidney.jpg';
-import image11 from '../assets/Kidney_Stones.jpg';
 import InputMask from 'react-input-mask';
 
-const BlogPage = () => {
-    const blogPosts = [
-        {
-            title: "Signs and Symptoms of Kidney Stones: When To See a Doctor",
-            date: "Oct. 24, 2024",
-            content: "Your kidneys are a vital organ that helps cleanse the body by filtering waste to create urine and help produce certain hormones. Therefore, if you have signs of problems such...",
-            image: image8,
-            link: "/signs-symptoms-kidney-stones-want-to-see-a-doctor" // Sample link, update with actual URL if available
-        },
-        {
-            title: "How Nephrologists Diagnose Kidney Disorders",
-            date: "Aug. 13, 2024",
-            content: "Nephrologists are specialists in kidney care who use a variety of diagnostic tools and methods to identify and manage kidney disorders. Accurate diagnosis is crucial for effective treatment and maintaining...",
-            image: image9,
-            link: "/how-nephrologists-diagnose-kidney-disorders" // Sample link, update with actual URL if available
-        },
-        {
-            title: "Understanding Hypertension: Causes, Symptoms, and Risk Factors",
-            date: "Jun. 10, 2024",
-            content: "The team of providers at The Healing Kidneys Institute of Houston helps patients live well with kidney-related diseases and disorders. Hypertension is a common issue we help treat and manage. Keep...",
-            image: image10,
-            link: "/understanding-hypertension-causes-symptoms-and-risk-factors" // Sample link, update with actual URL if available
-        },
-        {
-            title: "Kidney Stones: Causes for Concern",
-            date: "Dec. 18, 2023",
-            content: "Kidney stones, tiny mineral deposits that form in the kidneys, can bring excruciating pain. Imagine sharp, intense discomfort starting in your back, often radiating to your lower abdomen or groin...",
-            image: image11,
-            link: "/kidney-stones-causes-for-concern" // Sample link, update with actual URL if available
-        },
-        {
-            title: "Welcome to Our Blog",
-            date: "Jul. 10, 2023",
-            content: "The Healing Kidneys Institute of Houston would like to welcome you to our blog. Here you will find informative and useful postings about your nephrology care and our practice. At...",
-            link: "/welcome-to-our-blog" // Sample link, update with actual URL if available
-        },
-    ];
-
-
-    const handleSubmit = (e) => {
-        // Prevent form submission if any input is invalid
-        if (!e.target.checkValidity()) {
-            e.preventDefault(); // Prevent form submission
-            // Optionally display a message or handle invalid input feedback
-            alert('Please fill out the form correctly.');
-        }
-    };
-
+const WelcomeBlogPage = () => {
     const hours = [
         { day: 'Monday', hours: '8:30 am - 5:00 pm' },
         { day: 'Tuesday', hours: '8:30 am - 5:00 pm' },
@@ -63,31 +12,48 @@ const BlogPage = () => {
         { day: 'Sunday', hours: 'Closed' }
     ];
 
+    // Handle form submission
+    const handleSubmit = (e) => {
+        e.preventDefault(); // Prevent default form submission
+
+        // Prevent form submission if any input is invalid
+        if (!e.target.checkValidity()) {
+            alert('Please fill out the form correctly.');
+            return; // Stop further execution
+        }
+
+        // Handle form submission logic here (e.g., sending data to an API)
+        alert('Form submitted successfully!');
+    };
 
     return (
         <div className="bg-gray-100 min-h-screen py-10 px-4 sm:px-6 lg:px-8">
             <div className="max-w-5xl mx-auto bg-white shadow-lg rounded-lg p-8">
-                <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-600 mb-6">Blog</h1>
-                <div className="space-y-8">
-                    {blogPosts.map((post, index) => (
-                        <div key={index} className="flex flex-col sm:flex-row border-b pb-4">
-                            {post.image && (
-                                <img
-                                    src={post.image}
-                                    alt={post.title}
-                                    className="w-auto sm:w-32 h-auto object-cover mr-0 sm:mr-4 rounded"
-                                />
-                            )}
-                            <div className="flex-grow">
-                                <a href={post.link} className="text-lg md:text-xl lg:text-2xl font-bold text-blue-500 no-underline hover:underline">
-                                    {post.title}
-                                </a>
-                                <p className="text-sm text-gray-500">{post.date}</p>
-                                <p className="mt-2">{post.content}</p>
-                                <a href={post.link} className="text-blue-500 font-bold no-underline hover:underline">Read more</a>
-                            </div>
-                        </div>
-                    ))}
+                {/* Header */}
+                <a href='/welcome-to-our-blog' className="text-lg md:text-xl lg:text-2xl no-underline hover:underline font-bold text-blue-500 mb-2">
+                    Welcome to Our Blog
+                </a>
+                <p className="text-gray-500 mb-6">Posted on: Jul. 10, 2023.</p> {/* Add the posted date here */}
+
+                {/* Centered image with paragraph below */}
+                <div className="flex flex-col items-center mb-8">
+
+                    <p className="text-gray-700 leading-relaxed">
+                        The Healing Kidneys Institute of Houston would like to welcome you to our blog.
+                        Here you will find informative and useful postings about your nephrology care and our practice.
+                        At The Healing Kidneys Institute of Houston, we believe that educated patients are better prepared to make decisions regarding their overall health and well-being.
+                        Our blog was designed to provide you with valuable health care information, the latest medical developments, and health advice from our dedicated team.
+                        We hope you find our blog to be a great resource for keeping up to date with proper kidney care and treatments.
+                        We welcome all comments and questions.
+                    </p>
+
+
+                </div>
+                <div>
+                    <p className="text-gray-700 leading-relaxed justify-start">
+                        --- The Healing Kidneys Institute of Houston
+                    </p>
+
                 </div>
 
                 {/* {Google Form} */}
@@ -164,6 +130,7 @@ const BlogPage = () => {
                         </div>
                     </form>
                 </div>
+
             </div>
 
             {/* <div className="bg-gray-100 min-h-screen py-4 mt-10 px-4 sm:px-6 lg:pb-8"> */}
@@ -214,11 +181,8 @@ const BlogPage = () => {
                 </div>
             </div>
 
-
-
-
         </div>
     );
 };
 
-export default BlogPage;
+export default WelcomeBlogPage;

@@ -5,16 +5,16 @@ const KidneyDoctorPage = () => {
         <div className="bg-gray-100 min-h-screen py-10 px-4 sm:px-6 lg:px-8">
             <div className="max-w-5xl mx-auto bg-white shadow-lg rounded-lg p-8">
                 {/* Header - Centered for impact */}
-                <h2 className="text-3xl font-bold text-gray-800 mb-6">Kidney Doctor</h2>
+                <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-600 mb-6">Kidney Doctor</h2>
 
                 {/* Introduction Section */}
-                <h3 className="text-2xl text-gray-700 font-semibold mt-6 mb-2">Kidney Doctors in Houston, Conroe, and The Woodlands, TX</h3>
+                <h3 className="text-lg md:text-xl lg:text-2xl text-gray-600 font-semibold mt-6 mb-2">Kidney Doctors in Houston, Conroe, and The Woodlands, TX</h3>
                 <p className="text-gray-700 leading-relaxed mb-8">
                 As many as 37 million Americans are living with some form of chronic kidney disease (CKD). If you are experiencing some symptoms such as bloody urine or increased urination, you must consult with an experienced nephrologist at The Healing Kidneys Institute of Houston. Our experienced staff can not only help treat kidney disease but also treat or prevent issues that lead to CKD such as diabetes and hypertension.
                 </p>
 
                 {/* How a Kidney Specialist Can Help Section */}
-                <h3 className="text-2xl text-gray-700 font-semibold mt-6 mb-2">How a Kidney Specialist Can Help You?</h3>
+                <h3 className="text-lg md:text-xl lg:text-2xl text-gray-600 font-semibold mt-6 mb-2">How a Kidney Specialist Can Help You?</h3>
                 <p className="text-gray-700 leading-relaxed mb-8">
                 The kidneys play a vital role in our bodies. Both of our kidneys are responsible for removing waste from the blood, releasing hormones, and maintaining electrolyte balance. 
                     <br/><br/>
@@ -39,7 +39,7 @@ const KidneyDoctorPage = () => {
                 </ul>
 
                 {/* When to See a Kidney Doctor Section */}
-                <h3 className="text-2xl text-gray-700 font-semibold mt-6 mb-2">When Should You See a Kidney Doctor?</h3>
+                <h3 className="text-lg md:text-xl lg:text-2xl text-gray-600 font-semibold mt-6 mb-2">When Should You See a Kidney Doctor?</h3>
                 <p className="text-gray-700 leading-relaxed mb-8">
                 When you visit your primary care doctor, the reasons for your ailments may still be unresolved after testing. So you may also be referred to a nephrologist if you have these issues:
                 </p>

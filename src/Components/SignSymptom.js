@@ -1,58 +1,8 @@
 import React from 'react';
-import image8 from '../assets/kidney_stone_doctor.jpg';
-import image9 from '../assets/Nephrologists.jpg';
-import image10 from '../assets/Hypertension_kidney.jpg';
-import image11 from '../assets/Kidney_Stones.jpg';
 import InputMask from 'react-input-mask';
+import Images12 from '../assets/kidney_stone_doctor.jpg';
 
-const BlogPage = () => {
-    const blogPosts = [
-        {
-            title: "Signs and Symptoms of Kidney Stones: When To See a Doctor",
-            date: "Oct. 24, 2024",
-            content: "Your kidneys are a vital organ that helps cleanse the body by filtering waste to create urine and help produce certain hormones. Therefore, if you have signs of problems such...",
-            image: image8,
-            link: "/signs-symptoms-kidney-stones-want-to-see-a-doctor" // Sample link, update with actual URL if available
-        },
-        {
-            title: "How Nephrologists Diagnose Kidney Disorders",
-            date: "Aug. 13, 2024",
-            content: "Nephrologists are specialists in kidney care who use a variety of diagnostic tools and methods to identify and manage kidney disorders. Accurate diagnosis is crucial for effective treatment and maintaining...",
-            image: image9,
-            link: "/how-nephrologists-diagnose-kidney-disorders" // Sample link, update with actual URL if available
-        },
-        {
-            title: "Understanding Hypertension: Causes, Symptoms, and Risk Factors",
-            date: "Jun. 10, 2024",
-            content: "The team of providers at The Healing Kidneys Institute of Houston helps patients live well with kidney-related diseases and disorders. Hypertension is a common issue we help treat and manage. Keep...",
-            image: image10,
-            link: "/understanding-hypertension-causes-symptoms-and-risk-factors" // Sample link, update with actual URL if available
-        },
-        {
-            title: "Kidney Stones: Causes for Concern",
-            date: "Dec. 18, 2023",
-            content: "Kidney stones, tiny mineral deposits that form in the kidneys, can bring excruciating pain. Imagine sharp, intense discomfort starting in your back, often radiating to your lower abdomen or groin...",
-            image: image11,
-            link: "/kidney-stones-causes-for-concern" // Sample link, update with actual URL if available
-        },
-        {
-            title: "Welcome to Our Blog",
-            date: "Jul. 10, 2023",
-            content: "The Healing Kidneys Institute of Houston would like to welcome you to our blog. Here you will find informative and useful postings about your nephrology care and our practice. At...",
-            link: "/welcome-to-our-blog" // Sample link, update with actual URL if available
-        },
-    ];
-
-
-    const handleSubmit = (e) => {
-        // Prevent form submission if any input is invalid
-        if (!e.target.checkValidity()) {
-            e.preventDefault(); // Prevent form submission
-            // Optionally display a message or handle invalid input feedback
-            alert('Please fill out the form correctly.');
-        }
-    };
-
+const SignSymptomPage = () => {
     const hours = [
         { day: 'Monday', hours: '8:30 am - 5:00 pm' },
         { day: 'Tuesday', hours: '8:30 am - 5:00 pm' },
@@ -63,31 +13,100 @@ const BlogPage = () => {
         { day: 'Sunday', hours: 'Closed' }
     ];
 
+    // Handle form submission
+    const handleSubmit = (e) => {
+        e.preventDefault(); // Prevent default form submission
+
+        // Prevent form submission if any input is invalid
+        if (!e.target.checkValidity()) {
+            alert('Please fill out the form correctly.');
+            return; // Stop further execution
+        }
+
+        // Handle form submission logic here (e.g., sending data to an API)
+        alert('Form submitted successfully!');
+    };
 
     return (
         <div className="bg-gray-100 min-h-screen py-10 px-4 sm:px-6 lg:px-8">
             <div className="max-w-5xl mx-auto bg-white shadow-lg rounded-lg p-8">
-                <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-600 mb-6">Blog</h1>
-                <div className="space-y-8">
-                    {blogPosts.map((post, index) => (
-                        <div key={index} className="flex flex-col sm:flex-row border-b pb-4">
-                            {post.image && (
-                                <img
-                                    src={post.image}
-                                    alt={post.title}
-                                    className="w-auto sm:w-32 h-auto object-cover mr-0 sm:mr-4 rounded"
-                                />
-                            )}
-                            <div className="flex-grow">
-                                <a href={post.link} className="text-lg md:text-xl lg:text-2xl font-bold text-blue-500 no-underline hover:underline">
-                                    {post.title}
-                                </a>
-                                <p className="text-sm text-gray-500">{post.date}</p>
-                                <p className="mt-2">{post.content}</p>
-                                <a href={post.link} className="text-blue-500 font-bold no-underline hover:underline">Read more</a>
-                            </div>
-                        </div>
-                    ))}
+                {/* Header */}
+                <a href='/signs-symptoms-kidney-stones-want-to-see-a-doctor' className="text-lg md:text-xl lg:text-2xl no-underline hover:underline font-bold text-blue-500 mb-2">
+                    Signs and Symptoms of Kidney Stones: When to See a Doctor
+                </a>
+                <p className="text-gray-500 mb-6">Posted on: Oct. 24, 2024.</p> {/* Add the posted date here */}
+
+                {/* Centered image with paragraph below */}
+                <div className="flex flex-col items-center mb-8">
+                    <img
+                        src={Images12}
+                        alt="Medical professional examining kidney stone"
+                        className="rounded-lg shadow-md max-w-full h-auto mb-4"
+                    />
+                    <p className="text-gray-700 leading-relaxed">
+                        Your kidneys are a vital organ that helps cleanse the body by filtering waste to create urine and help produce certain hormones.
+                        Therefore, if you have signs of problems such as kidney stones in Houston, Conroe, & The Woodlands, TX, you should seek medical help.
+                        Luckily, you have a strong team of doctors at The Healing Kidneys Institute of Houston to assist you.
+                    </p>
+                </div>
+
+                {/* What Are Kidney Stones Section */}
+                <h3 className="text-lg md:text-xl lg:text-2xl text-gray-600 font-semibold mt-6 mb-2">
+                    What Are Kidney Stones?
+                </h3>
+                <p className="text-gray-700 leading-relaxed mb-8">
+                    Hard mineral or salt deposits can form inside your kidneys with too little liquid.
+                    They vary in size but can become as large as a golf ball.
+                    You can experience pain and other signs of illness when they grow in size.
+                    <a href="https://my.clevelandclinic.org/health/diseases/15604-kidney-stones" target="_blank" rel="noopener noreferrer" className="text-blue-500 font-bold no-underline hover:underline"> According the Cleveland Clinic</a>, about 1 in 10 people may develop this condition, and most of them are men between 30 and 40 years old.
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-8">
+                    There are four classifications for these stones based on their substance.
+                    You may develop calcium-oxalate/calcium phosphate stones, uric acid stones, struvite stones from bacterial infection, or cystine stones from cystinuria.
+                </p>
+
+                {/* Signs and Symptoms Section */}
+                <h3 className="text-lg md:text-xl lg:text-2xl text-gray-600 font-semibold mt-6 mb-2">
+                    Signs and Symptoms of Kidney Stones
+                </h3>
+                <p className="text-gray-700 leading-relaxed mb-8">
+                    One of the common signs of this condition is pain in the groin, back, side, or lower abdomen.
+                    Urine may be smelly, cloudy, or bloody and become more frequent or painful. Chills, fever, nausea, and vomiting can also occur.
+                    One way they cause pain and prevent urination is when a large one gets stuck in your ureter, creating a potentially toxic backup.
+                </p>
+
+                {/* Treatment Section */}
+                <h3 className="text-lg md:text-xl lg:text-2xl text-gray-600 font-semibold mt-6 mb-2">
+                    What to Expect from Treatment
+                </h3>
+                <p className="text-gray-700 leading-relaxed mb-8">
+                    When you seek care for kidney stones in Houston, Conroe, & The Woodlands, TX, your doctors must diagnose you properly through urine, imaging, and blood tests.
+                    The Healing Kidneys Institute of Houston doctors will likely advise you to drink lots of water to flush them out and may prescribe pain-relief medication.
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-8">
+                    If you have a blockage that won’t pass on its own, your doctors may use shockwave lithotripsy to break them up, allowing those now smaller fragments to pass with urine.
+                    Surgical procedures like percutaneous nephrolithotomy involve reaching the kidneys through a small incision in the back to use ultrasound to break the stones up.
+                    They may need to perform a more open surgery for more difficult larger stones.
+                    Your doctors will also advise lifestyle adjustments like more hydration, reducing animal protein, and high-sugar, high-sodium, and high-oxalate foods.
+                    They can also prescribe certain medications for prevention.
+                </p>
+
+                {/* Contact Section */}
+                <h3 className="text-lg md:text-xl lg:text-2xl text-gray-600 font-semibold mt-6 mb-2">
+                    Contact Our Doctors
+                </h3>
+                <p className="text-gray-700 leading-relaxed mb-8">
+                    The Healing Kidneys Institute of Houston doctors can help you heal from and prevent kidney stones in Houston, Conroe, & The Woodlands, TX.
+                    Most stones pass on their own, but our doctors have methods when they don’t.
+                    To make an appointment at any of our three offices, call us at <a href="tel:8326102822" className="text-blue-500 no-underline hover:text-blue-800 hover:underline font-bold">(832) 610-2822</a>.
+                </p>
+
+                <hr className="border-t border-black"></hr>
+
+                {/* Tags */}
+                <div className="mt-1">
+                    <span className="text-sm text-gray-600">Tags: </span>
+                    <a href='/' className="text-sm no-underline hover:underline font-bold text-blue-500">Kidney Stones</a>
                 </div>
 
                 {/* {Google Form} */}
@@ -164,6 +183,7 @@ const BlogPage = () => {
                         </div>
                     </form>
                 </div>
+
             </div>
 
             {/* <div className="bg-gray-100 min-h-screen py-4 mt-10 px-4 sm:px-6 lg:pb-8"> */}
@@ -214,11 +234,8 @@ const BlogPage = () => {
                 </div>
             </div>
 
-
-
-
         </div>
     );
 };
 
-export default BlogPage;
+export default SignSymptomPage;
