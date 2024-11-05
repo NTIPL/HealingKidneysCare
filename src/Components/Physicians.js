@@ -32,37 +32,6 @@ const physicians = [
         dialysis: ["Davita", "FMC", "US Renal Care"]
     },
     {
-        name: "Marelle Montanez, DO",
-        image: require('../assets/DrMontanez.jpg.webp'),
-        fellowship: "University of Texas - Mc Govern Medical School",
-        residency: "Michigan State University - Lansing, MI",
-        certifications: "Internal Medicine",
-        affiliations: [
-            "CHI Baylor St. Lukes - The Woodlands",
-            "HCA Houston Healthcare - Conroe",
-            "HCA Houston Healthcare - Northwest",
-            "Houston Methodist - The Woodlands",
-            "Memorial Hermann - The Woodlands"
-        ],
-        dialysis: ["Davita", "FMC", "US Renal Care"]
-    },
-    {
-        name: "Dr. Taquiuddin, Khaja D.O",
-        image: require('../assets/Dr.Taquiuddin.webp'),
-        fellowship: "Baylor School of Medicine - Nephrology",
-        residency: "University of Kansas Medical School",
-        certifications: "Nephrology, internal Medicine",
-        affiliations: [
-            "CHI Baylor St. Lukes - The Woodlands",
-            "HCA Houston Healthcare - Conroe",
-            "HCA Houston Healthcare - Northwest",
-            "Houston Methodist - The Woodlands",
-            "Memorial Hermann - The Woodlands"
-        ],
-        dialysis: ["Davita", "FMC", "US Renal Care"],
-        transplantFellowship: "Houston Methodist Hospital - Nephrology"
-    },
-    {
         name: "Dr. Amol Patel, D.O",
         image: require('../assets/dr-patel.jpg.webp'),
         fellowship: "University of Washington, Seattle, WA - Nephrology",
@@ -81,10 +50,9 @@ const physicians = [
 
 const PhysicianPage = () => {
     return (
-        // <div className="bg-gray-100 py-10">
         <div className="bg-gray-100 min-h-screen py-10 px-4 sm:px-6 lg:px-8">
 
-            <div className="max-w-5xl mx-auto ">
+            <div className="max-w-5xl mx-auto">
                 <div className="mb-8 text-center">
                     <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-600">Staff</h1>
                     <p className="text-gray-700 text-base text-left mt-3">
@@ -94,12 +62,9 @@ const PhysicianPage = () => {
                     </p>
                 </div>
 
-                <div className="space-y-8">
+                <div className="space-y-1">
                     {physicians.map((physician, index) => (
-                        <div
-                            key={index}
-                            className="bg-white rounded-lg shadow-lg p-6 grid grid-cols-1 md:grid-cols-2 gap-6"
-                        >
+                        <div key={index} className="bg-white p-6 rounded-lg grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="flex flex-col items-center">
                                 <img
                                     src={physician.image}
@@ -111,15 +76,6 @@ const PhysicianPage = () => {
 
                             <div className="md:w-full">
                                 <div className="text-left">
-                                    {/* Transplant Fellowship for Dr. Taquiuddin */}
-                                    {physician.name === "Dr. Taquiuddin, Khaja D.O" && (
-                                        <>
-                                            <h3 className="font-bold text-gray-700 mb-1 text-lg">Transplant Nephrology Fellowship</h3>
-                                            <p className="text-gray-600 text-base mb-2">
-                                                <span className="text-blue-500 font-bold hover:underline hover:text-blue-800 cursor-pointer">Houston Methodist Hospital</span> - Nephrology
-                                            </p>
-                                        </>
-                                    )}
 
                                     <h3 className="font-bold text-gray-700 mb-1 text-lg">Nephrology Fellowship</h3>
                                     <p className="text-gray-600 text-base mb-3">
@@ -131,16 +87,6 @@ const PhysicianPage = () => {
                                         {physician.name === "Sushmitha Gandra, MD" && (
                                             <>
                                                 <span className="text-blue-500 font-bold hover:underline hover:text-blue-800 cursor-pointer">University of Cincinnati</span> - Cincinnati, OH
-                                            </>
-                                        )}
-                                        {physician.name === "Marelle Montanez, DO" && (
-                                            <>
-                                                <span className="text-blue-500 font-bold hover:underline hover:text-blue-800 cursor-pointer">University of Texas</span> - Mc Govern Medical School
-                                            </>
-                                        )}
-                                        {physician.name === "Dr. Taquiuddin, Khaja D.O" && (
-                                            <>
-                                                <span className="text-blue-500 font-bold hover:underline hover:text-blue-800 cursor-pointer">Baylor School of Medicine</span> - Nephrology
                                             </>
                                         )}
                                         {physician.name === "Dr. Amol Patel, D.O" && (
@@ -162,16 +108,6 @@ const PhysicianPage = () => {
                                                 <span className="text-blue-500 font-bold hover:underline hover:text-blue-800 cursor-pointer">Lankenau Medical Center</span> - Lankenau, PA
                                             </>
                                         )}
-                                        {physician.name === "Marelle Montanez, DO" && (
-                                            <>
-                                                <span className="text-blue-500 font-bold hover:underline hover:text-blue-800 cursor-pointer">Michigan State University</span> - Lansing, MI
-                                            </>
-                                        )}
-                                        {physician.name === "Dr. Taquiuddin, Khaja D.O" && (
-                                            <>
-                                                <span className="text-blue-500 font-bold hover:underline hover:text-blue-800 cursor-pointer">University of Kansas Medical School</span>
-                                            </>
-                                        )}
                                         {physician.name === "Dr. Amol Patel, D.O" && (
                                             <>
                                                 <span className="text-blue-500 font-bold hover:underline hover:text-blue-800 cursor-pointer">Houston Methodist Hospital, Houston, TX</span>
@@ -183,7 +119,7 @@ const PhysicianPage = () => {
                                     <p className="text-gray-600 text-base mb-3">{physician.certifications}</p>
 
                                     <h3 className="font-bold text-gray-700 mb-1 text-lg">Hospital Affiliations</h3>
-                                    <ul className="text-gray-600 text-base mb-3">
+                                    <ul className="text-gray-600 p-0 text-base mb-3">
                                         {physician.affiliations.map((affiliation, idx) => (
                                             <li key={idx}>
                                                 {/* Check and apply style only to specified hospital names */}
@@ -209,16 +145,19 @@ const PhysicianPage = () => {
 
 
                                     <h3 className="font-bold text-gray-700 mb-1 text-lg">Dialysis</h3>
-                                    <ul className="text-gray-600 text-base">
+                                    <ul className="text-gray-600 p-0 text-base">
                                         {physician.dialysis.map((center, idx) => (
                                             <li key={idx}>{center}</li>
                                         ))}
                                     </ul>
                                 </div>
                             </div>
+                            {/* Horizontal line between each physician */}
+                            {/* <hr className="border-t-2 border-b my-2 col-span-2" /> */}
                         </div>
                     ))}
                 </div>
+
             </div>
         </div>
     );

@@ -44,30 +44,35 @@ const CustomBreadcrumb = () => {
     }
 
     return (
-        <Breadcrumb className="flex items-center space-x-2 py-2 pb-0 px-2 bg-gray-100 rounded-md shadow-lg">
-            <Breadcrumb.Item linkAs={Link} linkProps={{ to: '/' }} className="text-blue-700 hover:text-blue-900 font-semibold transition duration-200 ease-in-out">
-                Home
-            </Breadcrumb.Item>
-            {pathnames.map((value, index) => {
-                const routeTo = `/${pathnames.slice(0, index + 1).join('/')}`;
-                const isLast = index === pathnames.length - 1;
+        <div className='bg-gray-100'>
+            <Breadcrumb className="max-w-5xl mx-auto pt-4 flex items-center space-x-2 py-2 pb-0 px-2 bg-gray-100">
+                <Breadcrumb.Item
+                    linkAs={Link}
+                    linkProps={{ to: '/' }}
+                    className="text-gray-700 hover:underline font-semibold transition duration-200 ease-in-out">
+                    Home
+                </Breadcrumb.Item>
+                {pathnames.map((value, index) => {
+                    const routeTo = `/${pathnames.slice(0, index + 1).join('/')}`;
+                    const isLast = index === pathnames.length - 1;
 
-                return isLast ? (
-                    <Breadcrumb.Item active key={routeTo} className="text-gray-700 font-semibold">
-                        {breadcrumbMap[routeTo]}
-                    </Breadcrumb.Item>
-                ) : (
-                    <Breadcrumb.Item
-                        linkAs={Link}
-                        linkProps={{ to: routeTo }}
-                        key={routeTo}
-                        className="text-blue-700 hover:text-blue-900 font-semibold transition duration-200 ease-in-out"
-                    >
-                        {breadcrumbMap[routeTo]}
-                    </Breadcrumb.Item>
-                );
-            })}
-        </Breadcrumb>
+                    return isLast ? (
+                        <Breadcrumb.Item active key={routeTo} className="text-gray-700 font-semibold">
+                            {breadcrumbMap[routeTo]}
+                        </Breadcrumb.Item>
+                    ) : (
+                        <Breadcrumb.Item
+                            linkAs={Link}
+                            linkProps={{ to: routeTo }}
+                            key={routeTo}
+                            className="text-gray-700 font-semibold transition duration-200 ease-in-out"
+                        >
+                            {breadcrumbMap[routeTo]}
+                        </Breadcrumb.Item>
+                    );
+                })}
+            </Breadcrumb>
+        </div>
     );
 };
 

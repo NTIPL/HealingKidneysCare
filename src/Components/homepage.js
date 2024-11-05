@@ -97,7 +97,7 @@ const Homepage = () => {
             </div>
 
             {/* Services Section */}
-            <div className="max-w-5xl mx-auto mb-10">
+            <div className="max-w-5xl mx-auto py-10">
                 <div className="flex flex-wrap justify-center text-center">
 
                     {[
@@ -115,7 +115,7 @@ const Homepage = () => {
                             </div>
                             <h3 className="font-bold text-xl text-gray-800 mb-2">{service.title}</h3>
                             <Link to={service.link}>
-                                <button className="bg-blue-500 font-bold text-white px-4 py-2 rounded-full mt-2 hover:bg-blue-800">
+                                <button className="border-1 border-t-blue-400 border-blue-400 font-bold text-black px-4 py-2 rounded-full mt-2 hover:bg-blue-500">
                                     LEARN MORE
                                 </button>
                             </Link>
