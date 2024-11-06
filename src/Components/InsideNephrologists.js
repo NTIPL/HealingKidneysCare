@@ -1,8 +1,28 @@
 import React from 'react';
+import image9 from '../assets/Nephrologists.jpg';
 import InputMask from 'react-input-mask';
-import Images15 from '../assets/Kidney_Stones.jpg';
 
-const KidneyStonesCausesPage = () => {
+const InsideNephrologistsPage = () => {
+    const blogPosts = [
+        {
+            title: "How Nephrologists Diagnose Kidney Disorders",
+            date: "Aug. 13, 2024",
+            content: "Nephrologists are specialists in kidney care who use a variety of diagnostic tools and methods to identify and manage kidney disorders. Accurate diagnosis is crucial for effective treatment and maintaining...",
+            image: image9,
+            link: "/how-nephrologists-diagnose-kidney-disorders" // Sample link, update with actual URL if available
+        },
+    ];
+
+
+    const handleSubmit = (e) => {
+        // Prevent form submission if any input is invalid
+        if (!e.target.checkValidity()) {
+            e.preventDefault(); // Prevent form submission
+            // Optionally display a message or handle invalid input feedback
+            alert('Please fill out the form correctly.');
+        }
+    };
+
     const hours = [
         { day: 'Monday', hours: '8:30 am - 5:00 pm' },
         { day: 'Tuesday', hours: '8:30 am - 5:00 pm' },
@@ -13,102 +33,31 @@ const KidneyStonesCausesPage = () => {
         { day: 'Sunday', hours: 'Closed' }
     ];
 
-    // Handle form submission
-    const handleSubmit = (e) => {
-        e.preventDefault(); // Prevent default form submission
-
-        // Prevent form submission if any input is invalid
-        if (!e.target.checkValidity()) {
-            alert('Please fill out the form correctly.');
-            return; // Stop further execution
-        }
-
-        // Handle form submission logic here (e.g., sending data to an API)
-        alert('Form submitted successfully!');
-    };
 
     return (
         <div className="bg-gray-100 min-h-screen py-10 px-4 sm:px-6 lg:px-8">
             <div className="max-w-5xl mx-auto bg-white shadow-lg rounded-lg p-8">
-                {/* Header */}
-                <a href='/kidney-stones-causes-for-concern' className="text-lg md:text-xl lg:text-2xl no-underline hover:underline font-bold text-blue-500 mb-2">
-                    Kidney Stones: Causes for Concern
-                </a>
-                <p className="text-gray-500 mb-6">Posted on: Dec. 18, 2023.</p> {/* Add the posted date here */}
-
-                {/* Centered image with paragraph below */}
-                <div className="flex flex-col items-center mb-8">
-                    <img
-                        src={Images15}
-                        alt="Medical professional examining kidney stone"
-                        className="rounded-lg shadow-md max-w-full h-auto mb-4"
-                    />
-                    <p className="text-gray-700 leading-relaxed">
-                        Kidney stones, tiny mineral deposits that form in the kidneys, can bring excruciating pain.
-                        Imagine sharp, intense discomfort starting in your back, often radiating to your lower abdomen or groin.
-                        You might notice pink, red, or brown urine accompanied by nausea, vomiting, or a persistent need to urinate.
-                        These are common signs of kidney stones.
-                    </p>
-
-                    <p className="text-gray-700 leading-relaxed">
-                        If you or a loved one experience these symptoms, seeking medical attention is paramount.
-                        The Healing Kidneys Institute of Houston specializes in kidney health and provides comprehensive care for kidney stone-related issues.
-                        Prompt contact with the Institute is essential when you notice persistent pain that doesn't alleviate with over-the-counter pain relievers,
-                        blood in your urine, or if you have a history of kidney stones in Conroe, Shenandoah, Houston, or The Woodlands, TX.
-                    </p>
-
-                    <p className="text-gray-700 leading-relaxed">
-                        Consulting the Healing Kidneys Institute of Houston offers you access to expert care and personalized treatment plans.
-                        The compassionate team will guide you through diagnostic procedures, including imaging tests, to accurately identify and effectively manage your condition.
-                        They prioritize your comfort and well-being, ensuring you receive the best care possible.
-                    </p>
-                </div>
-
-                {/* What Are Kidney Stones Section */}
-                <h3 className="text-lg md:text-xl lg:text-2xl text-gray-600 font-semibold mt-6 mb-2">
-                    Kidney Stones: Causes for Concern
-                </h3>
-                <p className="text-gray-700 leading-relaxed mb-8">
-                    Kidney stones, while small, can cause significant discomfort and, in some cases, lead to severe complications.
-                    They form when certain substances in your urine become highly concentrated, crystallizing and creating solid masses within the kidneys.
-                    Factors like dehydration, dietary habits (high in salt or protein),
-                    family history, and certain medical conditions contribute to their development.
-                </p>
-                <p className="text-gray-700 leading-relaxed mb-8">
-                    If you experience sharp, stabbing pain in your back or side, often radiating to the lower abdomen or groin,
-                    it could indicate a kidney stone passing through the urinary tract.
-                    Symptoms like blood in urine, nausea, persistent urge to urinate, or fever suggest complications requiring immediate attention.
-                </p>
-                <p className="text-gray-700 leading-relaxed mb-8">
-                    Timely intervention prevents complications like urinary tract obstruction, kidney damage, or recurring kidney stones in Conroe, Shenandoah, Houston, or The Woodlands, TX.
-                    Your kidney doctor will conduct tests, including imaging and urine analysis, to diagnose, offer treatment options, and suggest preventive measures tailored to your condition,
-                    ensuring better kidney health and minimizing future occurrences.
-                </p>
-
-                {/* Signs and Symptoms Section */}
-                <h3 className="text-lg md:text-xl lg:text-2xl text-gray-600 font-semibold mt-6 mb-2">
-                    Kidney Stones: Diagnosis and Treatment
-                </h3>
-                <p className="text-gray-700 leading-relaxed mb-8">
-                    Diagnosing kidney stones involves a physical exam, imaging tests like CT scans or ultrasounds, and analysis of urine samples to confirm their presence.
-                    Treatment varies based on the stone's size and severity. Small stones usually pass naturally with increased fluid intake and pain medication.
-                    Larger stones might require procedures like lithotripsy to break them into smaller pieces for easier passage or surgical intervention in complex cases.
-                </p>
-
-                <p className="text-gray-700 leading-relaxed mb-8">
-                    Please explore our <a href='/' target="_blank" rel="noopener noreferrer" className="text-blue-500 font-bold no-underline hover:underline">website </a> to learn about the conditions we treat and the services provided.
-                    Consult our experts at The Healing Kidneys Institute of Houston to ensure a brighter future and
-                    improved quality of life for you or your loved ones dealing with kidney issues.
-                    You can call <a href="tel:8326102822" className="text-blue-500 no-underline hover:text-blue-800 hover:underline font-bold">(832) 610-2822 </a>
-                    to schedule an appointment for kidney stones in Conroe, Shenandoah, or Houston, TX, or book online.
-                </p>
-
-                <hr className="border-t border-black"></hr>
-
-                {/* Tags */}
-                <div className="mt-1">
-                    <span className="text-sm text-gray-600">Tags: </span>
-                    <a href='/blog/kidney-stones' className="text-sm no-underline hover:underline font-bold text-blue-500">Kidney Stones</a>
+                <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-600 mb-6">Blog</h1>
+                <div className="space-y-8">
+                    {blogPosts.map((post, index) => (
+                        <div key={index} className="flex flex-col sm:flex-row border-b pb-4">
+                            {post.image && (
+                                <img
+                                    src={post.image}
+                                    alt={post.title}
+                                    className="w-auto sm:w-32 h-auto object-cover mr-0 sm:mr-4 rounded"
+                                />
+                            )}
+                            <div className="flex-grow">
+                                <a href={post.link} className="text-lg md:text-xl lg:text-2xl font-bold text-blue-500 no-underline hover:underline">
+                                    {post.title}
+                                </a>
+                                <p className="text-sm text-gray-500">{post.date}</p>
+                                <p className="mt-2">{post.content}</p>
+                                <a href={post.link} className="text-blue-500 font-bold no-underline hover:underline">Read more</a>
+                            </div>
+                        </div>
+                    ))}
                 </div>
 
                 {/* {Google Form} */}
@@ -185,7 +134,6 @@ const KidneyStonesCausesPage = () => {
                         </div>
                     </form>
                 </div>
-
             </div>
 
             {/* <div className="bg-gray-100 min-h-screen py-4 mt-10 px-4 sm:px-6 lg:pb-8"> */}
@@ -236,8 +184,11 @@ const KidneyStonesCausesPage = () => {
                 </div>
             </div>
 
+
+
+
         </div>
     );
 };
 
-export default KidneyStonesCausesPage;
+export default InsideNephrologistsPage;

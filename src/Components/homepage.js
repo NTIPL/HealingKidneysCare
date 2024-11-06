@@ -72,16 +72,16 @@ const Homepage = () => {
                         <div className="lg:col-span-1 px-4">
                             <p className="text-base text-gray-600 mb-4">
                                 We are a group of committed, compassionate and caring
-                                <a href="#kidney-doctor" className="font-bold text-blue-500 no-underline hover:underline"> kidney doctors </a>
+                                <a href="/services/kidney-doctor" className="font-bold text-blue-500 no-underline hover:underline"> kidney doctors </a>
                                 dedicated to providing high-quality care for patients.
                             </p>
                             <p className="text-base text-gray-600 mb-4">
                                 We offer a wide range of nephrology services for
-                                <a href="#kidney-diseases" className="font-bold text-blue-500 no-underline hover:underline"> kidney diseases</a>,
-                                <a href="#hypertension" className="font-bold text-blue-500 no-underline hover:underline"> hypertension</a>,
-                                <a href="#kidney-stones" className="font-bold text-blue-500 no-underline hover:underline"> kidney stones</a>,
+                                <a href="/services/kidney-disease" className="font-bold text-blue-500 no-underline hover:underline"> kidney diseases</a>,
+                                <a href="/services/hypertension" className="font-bold text-blue-500 no-underline hover:underline"> hypertension</a>,
+                                <a href="/services/kidney-stones" className="font-bold text-blue-500 no-underline hover:underline"> kidney stones</a>,
                                 and other kidney-related disorders. Additionally, we offer comprehensive
-                                <a href="#dialysis" className="font-bold text-blue-500 no-underline hover:underline"> dialysis</a> treatment options.
+                                <a href="/services/dialysis" className="font-bold text-blue-500 no-underline hover:underline"> dialysis</a> treatment options.
                             </p>
                             <p className="text-base text-gray-600 mb-4">
                                 We believe in treating our patients as if they are our family, providing

@@ -43,7 +43,7 @@ const DialysisPage = () => {
                 {/* Contact Line */}
                 <p className="text-lg text-center font-bold text-black">
                     To learn more about dialysis treatment, contact our nephrologists at The Healing Kidneys Institute of Houston. You can reach us at our Houston, Conroe, or The
-                    Woodlands, TX office today at <a href="tel:+18326102822" className="text-blue-600 hover:text-blue-800">(832) 610-2822</a>!
+                    Woodlands, TX office today at <a href="tel:+18326102822" className="text-blue-600 no-underline hover:text-blue-800 hover:underline font-bold">(832) 610-2822</a>!
                 </p>
             </div>
         </div>

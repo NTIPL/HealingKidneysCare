@@ -31,6 +31,10 @@ const CustomBreadcrumb = () => {
 
     // Define paths where breadcrumb should not render
     const hiddenBreadcrumbPaths = [
+        '/',
+        '/blog/kidney-stones',
+        '/blog/nephrologists',
+        '/sitemap',
         '/signs-symptoms-kidney-stones-want-to-see-a-doctor',
         '/how-nephrologists-diagnose-kidney-disorders',
         '/understanding-hypertension-causes-symptoms-and-risk-factors',
@@ -49,7 +53,7 @@ const CustomBreadcrumb = () => {
                 <Breadcrumb.Item
                     linkAs={Link}
                     linkProps={{ to: '/' }}
-                    className="text-gray-700 hover:underline font-semibold transition duration-200 ease-in-out">
+                    className="text-gray-700 no-underline hover:underline font-semibold transition duration-200 ease-in-out">
                     Home
                 </Breadcrumb.Item>
                 {pathnames.map((value, index) => {

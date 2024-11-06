@@ -78,7 +78,7 @@ const KidneyDiseasePage = () => {
                 Our kidneys are vital to our overall health and well-being. 
                 If you are experiencing any kidney disease symptoms, it's important to contact our kidney doctors at 
                 The Healing Kidneys Institute of Houston for proper diagnosis and treatment. 
-                Call our Houston, Conroe, or The Woodlands, TX office today at  <a href="tel:8326102822" className="text-blue-500 hover:text-blue-800 font-bold">(832) 610-2822</a> to schedule a consultation!
+                Call our Houston, Conroe, or The Woodlands, TX office today at  <a href="tel:8326102822" className="text-blue-500 no-underline hover:text-blue-800 hover:underline font-bold">(832) 610-2822</a> to schedule a consultation!
                 </p>
             </div>
         </div>

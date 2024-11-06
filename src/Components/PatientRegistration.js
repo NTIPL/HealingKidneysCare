@@ -28,7 +28,7 @@ const PatientRegistrationPage = () => {
                 <h3 className="text-lg md:text-xl lg:text-2xl text-gray-600 font-semibold mt-6 mb-2">Patient Forms</h3>
                 <ul className="list-disc pl-5 list-inside text-gray-700 mb-8">
                     <li>
-                        <a href="/path-to-your-pdf" className="text-blue-500 no-underline hover:text-blue-800 font-bold">New Patient Package</a>
+                        <a href="https://hushforms.com/69900-new-patient-packet" target='_blank' rel="noreferrer" className="text-blue-500 no-underline hover:text-blue-800 font-bold">New Patient Package</a>
                     </li>
                 </ul>
             </div>

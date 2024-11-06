@@ -106,7 +106,7 @@ const SignSymptomPage = () => {
                 {/* Tags */}
                 <div className="mt-1">
                     <span className="text-sm text-gray-600">Tags: </span>
-                    <a href='/' className="text-sm no-underline hover:underline font-bold text-blue-500">Kidney Stones</a>
+                    <a href='/blog/kidney-stones' className="text-sm no-underline hover:underline font-bold text-blue-500">Kidney Stones</a>
                 </div>
 
                 {/* {Google Form} */}

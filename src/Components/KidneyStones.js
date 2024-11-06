@@ -47,23 +47,24 @@ const KidneyStonesPage = () => {
                 {/* Treatment of Kidney Stones */}
                 <h3 className="text-lg md:text-xl lg:text-2xl text-gray-600 font-semibold mt-6 mb-2">Treatment of Kidney Stones</h3>
                 <p className="text-gray-700 leading-relaxed mb-8">
-                    One of the most effective treatments for kidney stones is a procedure known as Extracorporeal Shock Wave Lithotripsy, abbreviated as ESWL. 
+                    One of the most effective treatments for kidney stones is a procedure known as Extracorporeal Shock Wave Lithotripsy, abbreviated as ESWL.
                     This kidney stone treatment uses shock waves to break up the kidney stone into smaller pieces which can then pass out of your body through your urine.
                 </p>
 
                 {/* The ESWL Procedure */}
                 <h3 className="text-lg md:text-xl lg:text-2xl text-gray-600 font-semibold mt-6 mb-2">The ESWL Procedure</h3>
                 <p className="text-gray-700 leading-relaxed mb-8">
-                    ESWL is usually performed on an outpatient basis, typically under IV sedation, so you will need to bring someone with you to drive you home after the procedure. 
+                    ESWL is usually performed on an outpatient basis, typically under IV sedation, so you will need to bring someone with you to drive you home after the procedure.
                     After treatment, small pieces of the kidney stone will pass within a few weeks.
                 </p>
 
                 {/* Contact Section */}
                 <h3 className="text-lg md:text-xl lg:text-2xl text-gray-600 font-semibold mt-6 mb-2">Want To Know More?</h3>
                 <p className="text-gray-700 leading-relaxed mb-8">
-                To find out more about the signs, symptoms, and treatment of kidney stones including Extracorporeal Shock Wave Lithotripsy, 
-                call the kidney doctors at The Healing Kidneys Institute. 
-                You can reach them in any of their three convenient office locations in Conroe, The Woodlands, and Houston, TX, by calling <a href="tel:8326102822" className="text-blue-500 no-underline hover:text-blue-800 font-bold hover:underline">(832) 610-2822</a>, so call today.
+                    To find out more about the signs, symptoms, and treatment of kidney stones including Extracorporeal Shock Wave Lithotripsy,
+                    call the kidney doctors at The Healing Kidneys Institute.
+                    You can reach them in any of their three convenient office locations in Conroe, The Woodlands, and Houston, TX, 
+                    by calling <a href="tel:8326102822" className="text-blue-500 no-underline hover:text-blue-800 font-bold hover:underline">(832) 610-2822</a>, so call today.
                 </p>
             </div>
         </div>

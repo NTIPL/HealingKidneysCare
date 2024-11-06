@@ -56,8 +56,9 @@ const HypertensionPage = () => {
                 <h3 className="text-lg md:text-xl lg:text-2xl text-gray-600 font-semibold mt-6 mb-2">Contact Our Doctor Today</h3>
                 <p className="text-gray-700 leading-relaxed mb-8">
                     Make sure that you’re not ignoring hypertension and that you understand the factors in your life that could lead to it.
-                    Contact our doctors at <span className='text-blue-500 hover:text-blue-800 hover:underline font-bold'>Healing Kidneys</span>
-                    Institute of Houston in Conroe, The Woodlands, and Houston, TX, at <a href="tel:8326102822" className="text-blue-500 hover:text-blue-800 font-bold">(832) 610-2822</a> to learn
+                    Contact our doctors at <a href='/' className='text-blue-500 no-underline hover:text-blue-800 hover:underline font-bold'>Healing Kidneys </a> 
+                     Institute of Houston in Conroe, The Woodlands, and Houston, TX, 
+                    at <a href="tel:8326102822" className="text-blue-500 no-underline hover:text-blue-800 hover:underline font-bold">(832) 610-2822</a> to learn
                     more about hypertension and if it could affect you.
                 </p>
             </div>

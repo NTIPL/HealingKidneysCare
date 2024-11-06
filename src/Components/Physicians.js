@@ -81,17 +81,17 @@ const PhysicianPage = () => {
                                     <p className="text-gray-600 text-base mb-3">
                                         {physician.name === "Madhavilatha Vuppali, MD" && (
                                             <>
-                                                <span className="text-blue-500 font-bold hover:underline hover:text-blue-800 cursor-pointer">Louisiana State University</span> - Shreveport, LA
+                                                <a href='https://www.lsus.edu/' target='_blank' rel="noreferrer" className="text-blue-500 no-underline font-bold hover:underline hover:text-blue-800 cursor-pointer">Louisiana State University</a> - Shreveport, LA
                                             </>
                                         )}
                                         {physician.name === "Sushmitha Gandra, MD" && (
                                             <>
-                                                <span className="text-blue-500 font-bold hover:underline hover:text-blue-800 cursor-pointer">University of Cincinnati</span> - Cincinnati, OH
+                                                <a href='https://www.uc.edu/' target='_blank' rel="noreferrer" className="text-blue-500 no-underline font-bold hover:underline hover:text-blue-800 cursor-pointer">University of Cincinnati</a> - Cincinnati, OH
                                             </>
                                         )}
                                         {physician.name === "Dr. Amol Patel, D.O" && (
                                             <>
-                                                <span className="text-blue-500 font-bold hover:underline hover:text-blue-800 cursor-pointer">University of Washington, Seattle, WA</span> - Nephrology
+                                                <a href='https://www.washington.edu/' target='_blank' rel="noreferrer" className="text-blue-500 no-underline font-bold hover:underline hover:text-blue-800 cursor-pointer">University of Washington, Seattle, WA</a> - Nephrology
                                             </>
                                         )}
                                     </p>
@@ -100,17 +100,17 @@ const PhysicianPage = () => {
                                     <p className="text-gray-600 text-base mb-3">
                                         {physician.name === "Madhavilatha Vuppali, MD" && (
                                             <>
-                                                <span className="text-blue-500 font-bold hover:underline hover:text-blue-800 cursor-pointer">St. Joseph Mercy Medical Center</span> - Pontiac, MI
+                                                <a href='https://www.trinityhealthmichigan.org/' target='_blank' rel="noreferrer" className="text-blue-500 no-underline font-bold hover:underline hover:text-blue-800 cursor-pointer">St. Joseph Mercy Medical Center</a> - Pontiac, MI
                                             </>
                                         )}
                                         {physician.name === "Sushmitha Gandra, MD" && (
                                             <>
-                                                <span className="text-blue-500 font-bold hover:underline hover:text-blue-800 cursor-pointer">Lankenau Medical Center</span> - Lankenau, PA
+                                                <a href='https://www.mainlinehealth.org/locations/lankenau-medical-center' target='_blank' rel="noreferrer" className="text-blue-500 no-underline font-bold hover:underline hover:text-blue-800 cursor-pointer">Lankenau Medical Center</a> - Lankenau, PA
                                             </>
                                         )}
                                         {physician.name === "Dr. Amol Patel, D.O" && (
                                             <>
-                                                <span className="text-blue-500 font-bold hover:underline hover:text-blue-800 cursor-pointer">Houston Methodist Hospital, Houston, TX</span>
+                                                <a href='https://www.houstonmethodist.org/' target='_blank' rel="noreferrer" className="text-blue-500 no-underline font-bold hover:underline hover:text-blue-800 cursor-pointer">Houston Methodist Hospital, Houston, TX</a>
                                             </>
                                         )}
                                     </p>
@@ -122,27 +122,43 @@ const PhysicianPage = () => {
                                     <ul className="text-gray-600 p-0 text-base mb-3">
                                         {physician.affiliations.map((affiliation, idx) => (
                                             <li key={idx}>
-                                                {/* Check and apply style only to specified hospital names */}
+                                                {/* Conditionally render links and plain text based on specified names */}
                                                 {affiliation.includes("CHI Baylor St. Lukes") ? (
-                                                    <span className="text-blue-500 font-bold hover:underline hover:text-blue-800 cursor-pointer">CHI Baylor St. Lukes</span>
-                                                ) : affiliation.includes("HCA Houston Healthcare") ? (
-                                                    <span className="text-blue-500 font-bold hover:underline hover:text-blue-800 cursor-pointer">HCA Houston Healthcare</span>
+                                                    <>
+                                                        <a href="https://www.stlukeshealth.org/" target="_blank" rel="noreferrer" className="text-blue-500 font-bold no-underline hover:underline hover:text-blue-800 cursor-pointer">
+                                                            CHI Baylor St. Lukes
+                                                        </a>
+                                                        {affiliation.includes("The Woodlands") && " - The Woodlands"}
+                                                    </>
+                                                ) : affiliation.includes("HCA Houston Healthcare - Conroe") ? (
+                                                    <>
+                                                        <a href="https://www.hcahoustonhealthcare.com/" target="_blank" rel="noreferrer" className="text-blue-500 font-bold no-underline hover:underline hover:text-blue-800 cursor-pointer">
+                                                            HCA Houston Healthcare
+                                                        </a>
+                                                        - Conroe
+                                                    </>
+                                                ) : affiliation.includes("HCA Houston Healthcare - Northwest") ? (
+                                                    <>HCA Houston Healthcare - Northwest</>
                                                 ) : affiliation.includes("Houston Methodist") ? (
-                                                    <span className="text-blue-500 font-bold hover:underline hover:text-blue-800 cursor-pointer">Houston Methodist</span>
+                                                    <>
+                                                        <a href="https://www.houstonmethodist.org/" target="_blank" rel="noreferrer" className="text-blue-500 font-bold no-underline hover:underline hover:text-blue-800 cursor-pointer">
+                                                            Houston Methodist
+                                                        </a>
+                                                        {affiliation.includes("The Woodlands") && " - The Woodlands"}
+                                                    </>
                                                 ) : affiliation.includes("Memorial Hermann") ? (
-                                                    <span className="text-blue-500 font-bold hover:underline hover:text-blue-800 cursor-pointer">Memorial Hermann</span>
+                                                    <>
+                                                        <a href="https://memorialhermann.org/" target="_blank" rel="noreferrer" className="text-blue-500 font-bold no-underline hover:underline hover:text-blue-800 cursor-pointer">
+                                                            Memorial Hermann
+                                                        </a>
+                                                        {affiliation.includes("The Woodlands") && " - The Woodlands"}
+                                                    </>
                                                 ) : (
                                                     affiliation
                                                 )}
-
-                                                {/* Ensure other text is displayed unchanged */}
-                                                {affiliation.includes("The Woodlands") && " - The Woodlands"}
-                                                {affiliation.includes("Conroe") && " - Conroe"}
-                                                {affiliation.includes("Northwest") && " - Northwest"}
                                             </li>
                                         ))}
                                     </ul>
-
 
                                     <h3 className="font-bold text-gray-700 mb-1 text-lg">Dialysis</h3>
                                     <ul className="text-gray-600 p-0 text-base">

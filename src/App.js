@@ -20,6 +20,9 @@ import HowNephrologistsPage from './Components/HowNephrologists';
 import UnderstandingHypertensionPage from './Components/UnderstandingHypertension';
 import KidneyStonesCausesPage from './Components/KidneyStonesCauses';
 import WelcomeBlogPage from './Components/WelcomeBlog';
+import InsideKidneyStonePage from './Components/InsideKidneyStone';
+import InsideNephrologistsPage from './Components/InsideNephrologists';
+import SiteMapPage from './Components/SiteMap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -49,6 +52,9 @@ function App() {
           <Route path="/understanding-hypertension-causes-symptoms-and-risk-factors" element={<UnderstandingHypertensionPage />} />
           <Route path="/kidney-stones-causes-for-concern" element={<KidneyStonesCausesPage />} />
           <Route path="/welcome-to-our-blog" element={<WelcomeBlogPage />} />
+          <Route path="/blog/kidney-stones" element={<InsideKidneyStonePage />} />
+          <Route path="/blog/nephrologists" element={<InsideNephrologistsPage />} />
+          <Route path="/sitemap" element={<SiteMapPage />} />
           
           
           {/* Add more routes as needed */}

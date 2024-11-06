@@ -90,9 +90,9 @@ const HowNephrologistsPage = () => {
                 {/* Tags */}
                 <div className="mt-1">
                     <span className="text-sm text-gray-600">Tags: </span>
-                    <a href='/' className="text-sm no-underline hover:underline font-bold text-blue-500">Nephrologists</a>,
-                    <a href='/' className="text-sm no-underline hover:underline font-bold text-blue-500"> Kidney Disease</a>,
-                    <a href='/' className="text-sm no-underline hover:underline font-bold text-blue-500"> Kidney Disorder</a>
+                    <a href='/blog/nephrologists' className="text-sm no-underline hover:underline font-bold text-blue-500">Nephrologists</a>,
+                    <a href='/blog/nephrologists' className="text-sm no-underline hover:underline font-bold text-blue-500"> Kidney Disease</a>,
+                    <a href='/blog/nephrologists' className="text-sm no-underline hover:underline font-bold text-blue-500"> Kidney Disorder</a>
                 </div>
 
                 {/* {Google Form} */}

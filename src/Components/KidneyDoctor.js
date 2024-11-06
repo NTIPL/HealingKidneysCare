@@ -58,12 +58,18 @@ const KidneyDoctorPage = () => {
 
                 {/* Blood Pressure Monitoring Section */}
                 <p className="text-gray-700 leading-relaxed mb-8">
-                Our nephrologists will monitor your high blood pressure because hypertension narrows the blood vessels. This constriction damages the blood vessels in the kidneys and the rest of the body. A damaged kidney won’t be able to remove extra bodily fluid or waste. As a result, not only is the body poisoning itself, but your blood pressure will continue to rise and cause other problems. According to The National Kidney Foundation, high blood pressure is the 2nd highest cause of kidney failure in the US.
+                Our nephrologists will monitor your high blood pressure because hypertension narrows the blood vessels. 
+                This constriction damages the blood vessels in the kidneys and the rest of the body. 
+                A damaged kidney won’t be able to remove extra bodily fluid or waste. 
+                As a result, not only is the body poisoning itself, but your blood pressure will continue to rise and cause other problems. 
+                According to The National Kidney Foundation, high blood pressure is the 2nd highest cause of kidney failure in the US.
                 </p>
 
                 {/* Contact Section */}
                 <p className="text-black text-center font-bold leading-relaxed mb-8">
-                Kidney disease and its underlying issues are a major health concern that should be managed properly. If you are looking for a compassionate and caring nephrologist team, contact the experts at The Healing Kidneys Institute of Houston. You can reach our Houston, Conroe, or The Woodlands, TX office today at  <a href="tel:8326102822" className="text-blue-500 hover:text-blue-800 font-bold">(832) 610-2822</a>!
+                Kidney disease and its underlying issues are a major health concern that should be managed properly. 
+                If you are looking for a compassionate and caring nephrologist team, contact the experts at The Healing Kidneys Institute of Houston. 
+                You can reach our Houston, Conroe, or The Woodlands, TX office today at  <a href="tel:8326102822" className="text-blue-500 no-underline hover:text-blue-800 hover:underline font-bold">(832) 610-2822</a>!
                 </p>
             </div>
         </div>
