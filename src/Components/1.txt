@@ -1,0 +1,7 @@
+import ServiceExcellenceLogo from './ServiceExcellence';  // Import the logo
+
+
+{/* Service Excellence Logo at the right bottom half */}
+                <div className="absolute bottom-0 right-0 -mb-20 mr-1 md:mr-8 lg:mr-12">
+                    <ServiceExcellenceLogo />
+                </div>
