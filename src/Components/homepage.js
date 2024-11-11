@@ -61,7 +61,7 @@
 //                             <div className="mt-4 text-center">
 //                                 <FontAwesomeIcon
 //                                     icon={isPaused ? faPlay : faPause}
-//                                     className="text-blue-500 text-2xl cursor-pointer"
+//                                     className="text-link-orange text-2xl cursor-pointer"
 //                                     onClick={handlePausePlay} // Make it clickable to toggle
 //                                     aria-label={isPaused ? "Play Carousel" : "Pause Carousel"}
 //                                 />
@@ -72,16 +72,16 @@
 //                         <div className="lg:col-span-1 px-4">
 //                             <p className="text-base text-gray-600 mb-4">
 //                                 We are a group of committed, compassionate and caring
-//                                 <a href="/services/kidney-doctor" className="font-bold text-blue-500 no-underline hover:underline"> kidney doctors </a>
+//                                 <a href="/services/kidney-doctor" className="font-bold text-link-orange no-underline hover:underline"> kidney doctors </a>
 //                                 dedicated to providing high-quality care for patients.
 //                             </p>
 //                             <p className="text-base text-gray-600 mb-4">
 //                                 We offer a wide range of nephrology services for
-//                                 <a href="/services/kidney-disease" className="font-bold text-blue-500 no-underline hover:underline"> kidney diseases</a>,
-//                                 <a href="/services/hypertension" className="font-bold text-blue-500 no-underline hover:underline"> hypertension</a>,
-//                                 <a href="/services/kidney-stones" className="font-bold text-blue-500 no-underline hover:underline"> kidney stones</a>,
+//                                 <a href="/services/kidney-disease" className="font-bold text-link-orange no-underline hover:underline"> kidney diseases</a>,
+//                                 <a href="/services/hypertension" className="font-bold text-link-orange no-underline hover:underline"> hypertension</a>,
+//                                 <a href="/services/kidney-stones" className="font-bold text-link-orange no-underline hover:underline"> kidney stones</a>,
 //                                 and other kidney-related disorders. Additionally, we offer comprehensive
-//                                 <a href="/services/dialysis" className="font-bold text-blue-500 no-underline hover:underline"> dialysis</a> treatment options.
+//                                 <a href="/services/dialysis" className="font-bold text-link-orange no-underline hover:underline"> dialysis</a> treatment options.
 //                             </p>
 //                             <p className="text-base text-gray-600 mb-4">
 //                                 We believe in treating our patients as if they are our family, providing
@@ -110,7 +110,7 @@
 // { title: "Hyponatremia", icon: "fas fa-vials", link: "/" },
 //                     ].map((service, index) => (
 //                         <div key={index} className="hover:bg-white hover:border p-6 mb-4 rounded-lg flex flex-col items-center justify-center w-full sm:w-1/2 lg:w-1/4">
-//                             <div className="text-blue-500 text-4xl mb-4">
+//                             <div className="text-link-orange text-4xl mb-4">
 //                                 <i className={service.icon}></i>
 //                             </div>
 //                             <h3 className="font-bold text-xl text-gray-800 mb-2">{service.title}</h3>
@@ -148,174 +148,31 @@
 
 
 
-import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
-import Locations from './Locations'; // Adjust the path as necessary
-import PatientReviews from './PatientReviews'; // Adjust the path as necessary
-import Slider from 'react-slick';
-
-// Importing all images used in the services
-import Image1 from '../assets/hki-group-providers2.jpg.webp';
-import Image2 from '../assets/shutterstock_692941057.jpg.webp';
-import Image3 from '../assets/hki-group-providers2.jpg.webp';
-import WhatImage from '../assets/Banner.png';
-import AKIImage from '../assets/chronische-nierenerkrankung-small.webp';
-import cdkImage from '../assets/cardiovascularmortalitypost_889591.jpg';
-import endrenalImage from '../assets/end-stage-renal.webp';
-import kscImage from '../assets/kidneystonecysts.jpg';
-import hyperImage from '../assets/doctor-checking-patient-blood-pressure.webp';
-import ptcImage from '../assets/heart-transplant-procedure-dr-pajaro-surgery-8col.webp';
-import htImage from '../assets/diabetespatientsinfectionmo_787816.jpg';
-
+import React from 'react';
+import ServiceSectionpage from './ServiceSection';
+import Locations from './Locations';
+import PatientReviews from './PatientReviews';
+import Carsouelpage from './Carsouel';
 
 const Homepage = () => {
-    const [isPaused, setIsPaused] = useState(false);
-
-    // Slick carousel settings
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: !isPaused,
-        autoplaySpeed: 3000,
-        pauseOnHover: true,
-    };
-
-    const handlePausePlay = () => {
-        setIsPaused(!isPaused);
-    };
-
-    // Service Data
-    const services = [
-        { title: "What We Do", image: WhatImage, textColor: "text-white", path: "/", isHeader: true },
-        { title: "Acute Kidney Injury (AKI)", image: AKIImage, path: "/" },
-        { title: "Chronic Kidney Disease (CKD)", image: cdkImage, path: "/services/kidney-stones" },
-        { title: "End Stage Renal Disease/Dialysis", image: endrenalImage, path: "/services/dialysis" },
-        { title: "Kidney Stones & Cysts", image: kscImage, path: "/services/kidney-stones" },
-        { title: "Hypertension Management", image: hyperImage, path: "/services/hypertension" },
-        { title: "Post-Transplant Care", image: ptcImage, path: "/" },
-        { title: "Hyponatremia", image: htImage, path: "/" },
-    ];
-
 
     return (
-        
-        <div className="bg-gray-100 min-h-screen py-10 px-4 sm:px-6 lg:px-8">
 
-            
-            
-            {/* Header Section */}
-            <div className="max-w-5xl mx-auto mb-10">
-                <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-center text-gray-600">
-                    NORTH HOUSTON, WOODLANDS AND CONROE'S TRUSTED COMPREHENSIVE KIDNEY CARE PROVIDER WHENEVER YOU NEED
-                </h1>
-            </div>
+        <div className="min-h-screen py-10 px-4 sm:px-6 lg:px-8">
 
-            <div className="max-w-5xl mx-auto bg-white shadow-lg rounded-lg">
-
-                {/* Main Content Section */}
-                <div className="mx-auto max-w-5xl mb-10 relative">
-
-
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center bg-white p-6 rounded-lg shadow-lg">
-                        {/* Image Carousel Section */}
-                        <div className="lg:col-span-1">
-                            <Slider {...settings}>
-                                <div><img src={Image1} alt="Kidney Care Group 1" className="w-full rounded-lg" /></div>
-                                <div><img src={Image2} alt="Kidney Care Group 2" className="w-full rounded-lg" /></div>
-                                <div><img src={Image3} alt="Kidney Care Group 3" className="w-full rounded-lg" /></div>
-                            </Slider>
-                            <div className="mt-4 text-center">
-                                <FontAwesomeIcon
-                                    icon={isPaused ? faPlay : faPause}
-                                    className="text-blue-500 text-2xl cursor-pointer"
-                                    onClick={handlePausePlay}
-                                    aria-label={isPaused ? "Play Carousel" : "Pause Carousel"}
-                                />
-                            </div>
-                        </div>
-                        {/* Text Section */}
-                        <div className="lg:col-span-1 px-4">
-                            <p className="text-base text-gray-600 mb-4">
-                                We are a group of committed, compassionate and caring
-                                <a href="/services/kidney-doctor" className="font-bold text-blue-500 no-underline hover:underline"> kidney doctors </a>
-                                dedicated to providing high-quality care for patients.
-                            </p>
-                            <p className="text-base text-gray-600 mb-4">
-                                We offer a wide range of nephrology services for
-                                <a href="/services/kidney-disease" className="font-bold text-blue-500 no-underline hover:underline"> kidney diseases</a>,
-                                <a href="/services/hypertension" className="font-bold text-blue-500 no-underline hover:underline"> hypertension</a>,
-                                <a href="/services/kidney-stones" className="font-bold text-blue-500 no-underline hover:underline"> kidney stones</a>,
-                                and other kidney-related disorders. Additionally, we offer comprehensive
-                                <a href="/services/dialysis" className="font-bold text-blue-500 no-underline hover:underline"> dialysis</a> treatment options.
-                            </p>
-                            <p className="text-base text-gray-600 mb-4">
-                                We believe in treating our patients as if they are our family, providing
-                                the excellent care they deserve at any time of need.
-                            </p>
-                            <h2 className="font-bold text-xl text-gray-600">OUR MISSION</h2>
-                            <p className="text-base text-gray-600">
-                                To treat and care for patients as we want to be treated.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div className="max-w-5xl mx-auto py-10">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
-                    {services.map((service, index) => (
-                        <div
-                            key={index}
-                            className="relative overflow-hidden rounded-lg aspect-square w-full border-0" // Adjusted height for smaller screens
-                            style={{
-                                backgroundColor: service.isHeader ? '#c64f22' : '#4b5f74', // Color for non-header services
-                                backgroundImage: service.image ? `url(${service.image})` : 'none', // Image if provided
-                                backgroundSize: 'cover',
-                                backgroundPosition: 'center',
-                            }}
-                        >
-                            {!service.isHeader && service.image && (
-                                <div className="absolute inset-0">
-                                    <div className="absolute inset-0 bg-[#4b5f74]/60 mix-blend-multiply" />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-[#4b5f74]/90 via-[#4b5f74]/50 to-transparent" />
-                                </div>
-                            )}
-                            <div className="relative h-full w-full p-3 sm:p-4 md:p-6 flex items-end">
-                                {service.isHeader ? (
-                                    <div className="absolute top-4 left-4">
-                                        <h3 className="text-white text-left font-bold text-xl sm:text-2xl md:text-3xl">
-                                            What
-                                        </h3>
-                                        <h3 className="text-white text-left font-bold text-xl sm:text-2xl md:text-3xl underline mt-1">
-                                            We Do
-                                        </h3>
-                                    </div>
-                                ) : (
-                                    <a
-                                        href={service.path}
-                                        className="text-white text-left font-bold text-base sm:text-lg md:text-xl leading-tight sm:leading-snug max-w-[90%] no-underline"
-                                    >
-                                        {service.title}
-                                    </a>
-                                )}
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-
-
-
+            <section>
+                <ServiceSectionpage />
+            </section>
             <section>
                 <PatientReviews />
             </section>
             <section>
                 <Locations />
             </section>
+            <section>
+                <Carsouelpage />
+            </section>
+
         </div>
     );
 };

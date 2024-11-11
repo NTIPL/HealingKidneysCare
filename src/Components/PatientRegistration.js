@@ -2,9 +2,8 @@ import React from 'react';
 
 const PatientRegistrationPage = () => {
     return (
-        // <div className="bg-gray-100 min-h-screen py-10 px-4 sm:px-6 lg:px-8">
-        <div className="bg-gray-100 py-10 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-5xl mx-auto bg-white shadow-lg rounded-lg p-8">
+        <div className="min-h-screen py-10 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-5xl mx-auto border rounded-lg p-8">
                 {/* Header */}
                 <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-600 mb-6">New Patients</h2>
 
@@ -26,9 +25,9 @@ const PatientRegistrationPage = () => {
 
                 {/* Patient Forms Section */}
                 <h3 className="text-lg md:text-xl lg:text-2xl text-gray-600 font-semibold mt-6 mb-2">Patient Forms</h3>
-                <ul className="list-disc pl-5 list-inside text-gray-700 mb-8">
+                <ul className=" pl-5 list-inside text-gray-700 mb-8">
                     <li>
-                        <a href="https://hushforms.com/69900-new-patient-packet" target='_blank' rel="noreferrer" className="text-blue-500 no-underline hover:text-blue-800 font-bold">New Patient Package</a>
+                        <a href="https://hushforms.com/69900-new-patient-packet" target='_blank' rel="noreferrer" className="text-link-orange no-underline hover:text-blue-800 font-bold">New Patient Package</a>
                     </li>
                 </ul>
             </div>
@@ -37,3 +36,4 @@ const PatientRegistrationPage = () => {
 };
 
 export default PatientRegistrationPage;
+

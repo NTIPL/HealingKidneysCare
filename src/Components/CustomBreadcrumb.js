@@ -48,8 +48,8 @@ const CustomBreadcrumb = () => {
     }
 
     return (
-        <div className='bg-gray-100'>
-            <Breadcrumb className="max-w-5xl mx-auto pt-4 flex items-center space-x-2 py-2 pb-0 px-2 bg-gray-100">
+        <div className=''>
+            <Breadcrumb className="max-w-5xl mx-auto pt-4 flex items-center space-x-2 py-2 pb-0 px-2">
                 <Breadcrumb.Item
                     linkAs={Link}
                     linkProps={{ to: '/' }}

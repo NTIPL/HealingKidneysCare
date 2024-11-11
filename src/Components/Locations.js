@@ -21,26 +21,23 @@ const Locations = () => {
     ];
 
     return (
-        <div className="bg-gray-100">
-        {/* Locations */}
-        <div className="max-w-5xl mx-auto mt-10">
-                {/* Centered heading for all locations */}
-                {/* <h3 className="font-bold text-center">Find Us Here:</h3> */}
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-2 bg-white p-4 mt-2 rounded-lg shadow-lg">
+        <div className="py-10">
+            {/* Locations */}
+            <div className="max-w-5xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-2">
                     {locations.map((location, index) => (
-                        <div key={index} className="text-center border rounded-lg mt-4 shadow-lg p-3">
+                        <div key={index} className="text-center mt-4">
                             {/* Location name */}
-                            <h2 className="text-gray-700 font-bold text-xl mb-4">{location.name}</h2>
+                            <h2 className="text-white bg-[#c64f22] font-bold text-2xl p-2">{location.name}</h2>
                             {/* Location address */}
-                            <p className="text-gray-700 whitespace-pre-line mb-4">{location.address}</p>
+                            <p className="text-black whitespace-pre-line">{location.address}</p>
 
                             {/* Map iframe */}
-                            <div className="border rounded-lg overflow-hidden">
+                            <div className="border overflow-hidden">
                                 <iframe
                                     src={location.mapSrc}
                                     width="100%"
-                                    height="220"
+                                    height="250"
                                     style={{ border: 0 }}
                                     allowFullScreen=""
                                     loading="lazy"
@@ -52,7 +49,7 @@ const Locations = () => {
                 </div>
             </div>
         </div>
-        
+
     );
 };
 

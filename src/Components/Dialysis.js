@@ -2,8 +2,8 @@ import React from 'react';
 
 const DialysisPage = () => {
     return (
-        <div className="bg-gray-100 min-h-screen py-10 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-5xl mx-auto bg-white shadow-lg rounded-lg p-8">
+        <div className="min-h-screen py-10 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-5xl mx-auto border rounded-lg p-8">
                 {/* Header */}
                 <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-600 mb-4">Dialysis</h2>
                 <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-gray-600 mb-4">
@@ -43,7 +43,7 @@ const DialysisPage = () => {
                 {/* Contact Line */}
                 <p className="text-lg text-center font-bold text-black">
                     To learn more about dialysis treatment, contact our nephrologists at The Healing Kidneys Institute of Houston. You can reach us at our Houston, Conroe, or The
-                    Woodlands, TX office today at <a href="tel:+18326102822" className="text-blue-600 no-underline hover:text-blue-800 hover:underline font-bold">(832) 610-2822</a>!
+                    Woodlands, TX office today at <a href="tel:+18326102822" className="text-link-orange no-underline hover:text-blue-800 hover:underline font-bold">(832) 610-2822</a>!
                 </p>
             </div>
         </div>

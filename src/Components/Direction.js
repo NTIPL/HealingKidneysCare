@@ -22,9 +22,9 @@ const DirectionPage = () => {
 
     return (
 
-        <div className="bg-gray-100 min-h-screen py-10 px-4 sm:px-6 lg:px-8">
+        <div className="min-h-screen py-10 sm:px-6 lg:px-8">
             {/* Combined Office and Locations Information */}
-            <div className="max-w-5xl mx-auto p-4 bg-white rounded-lg shadow-lg">
+            <div className="max-w-5xl mx-auto">
                 <h2 className="text-xl md:text-2xl lg:text-3xl text-gray-600 font-bold mb-4">Office</h2>
                 <p className="text-gray-700 mb-4">
                     Our clinics are conveniently located within driving distance to serve patients in N. Houston, Spring, Porter, Woodlands, Conroe. We use advanced tools in diagnosis & treatment to offer the best care you deserve.
@@ -36,7 +36,7 @@ const DirectionPage = () => {
                 {/* Locations */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mt-2">
                     {locations.map((location, index) => (
-                        <div key={index} className="text-center border rounded-lg mt-4 shadow-lg p-3">
+                        <div key={index} className="text-center border rounded-lg mt-4 p-3">
                             {/* Location name */}
                             <h2 className="text-gray-700 font-bold text-xl mb-4">{location.name}</h2>
                             {/* Location address */}

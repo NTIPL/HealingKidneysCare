@@ -27,11 +27,11 @@ const siteMapData = [
 
 const SiteMapPage = () => {
     return (
-        <div className="bg-gray-100 min-h-screen py-10 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-5xl mx-auto bg-white shadow-lg rounded-lg p-8">
+        <div className="min-h-screen py-10 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-5xl mx-auto border rounded-lg p-8">
                 {/* Breadcrumb */}
                 <div className="text-gray-600 mb-6">
-                    <a href="/" className="text-blue-500 no-underline font-bold hover:underline">Home</a>
+                    <a href="/" className="text-link-orange no-underline font-bold hover:underline">Home</a>
                     <span className="mx-2">{'>'}</span>
                     <span>Site Map - The Healing Kidneys Institute of Houston</span>
                 </div>
@@ -46,14 +46,14 @@ const SiteMapPage = () => {
                     <ul className="list-disc">
                         {siteMapData.map((item, index) => (
                             <li key={index} className="space-y-2">
-                                <a href={item.link} className="text-blue-500 no-underline hover:underline">
+                                <a href={item.link} className="text-link-orange no-underline hover:underline">
                                     {item.title}
                                 </a>
                                 {item.subLinks && (
                                     <ul className="ml-1 list-disc">
                                         {item.subLinks.map((subItem, subIndex) => (
                                             <li key={subIndex}>
-                                                <a href={subItem.link} className="text-blue-500 no-underline hover:underline">
+                                                <a href={subItem.link} className="text-link-orange no-underline hover:underline">
                                                     {subItem.title}
                                                 </a>
                                             </li>

@@ -55,8 +55,8 @@ function App() {
           <Route path="/blog/kidney-stones" element={<InsideKidneyStonePage />} />
           <Route path="/blog/nephrologists" element={<InsideNephrologistsPage />} />
           <Route path="/sitemap" element={<SiteMapPage />} />
-          
-          
+
+
           {/* Add more routes as needed */}
         </Routes>
         <Footer />

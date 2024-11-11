@@ -2,8 +2,8 @@ import React from 'react';
 
 const KidneyStonesPage = () => {
     return (
-        <div className="bg-gray-100 min-h-screen py-10 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-5xl mx-auto bg-white shadow-lg rounded-lg p-8">
+        <div className="min-h-screen py-10 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-5xl mx-auto border rounded-lg p-8">
                 {/* Header */}
                 <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-600 mb-6">Kidney Stones</h2>
 
@@ -64,7 +64,7 @@ const KidneyStonesPage = () => {
                     To find out more about the signs, symptoms, and treatment of kidney stones including Extracorporeal Shock Wave Lithotripsy,
                     call the kidney doctors at The Healing Kidneys Institute.
                     You can reach them in any of their three convenient office locations in Conroe, The Woodlands, and Houston, TX, 
-                    by calling <a href="tel:8326102822" className="text-blue-500 no-underline hover:text-blue-800 font-bold hover:underline">(832) 610-2822</a>, so call today.
+                    by calling <a href="tel:8326102822" className="text-link-orange no-underline hover:text-blue-800 font-bold hover:underline">(832) 610-2822</a>, so call today.
                 </p>
             </div>
         </div>

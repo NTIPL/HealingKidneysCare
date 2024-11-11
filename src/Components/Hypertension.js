@@ -3,8 +3,8 @@ import Image4 from '../assets/hypertension.jpg.webp'; // Update the path to your
 
 const HypertensionPage = () => {
     return (
-        <div className="bg-gray-100 min-h-screen py-10 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-5xl mx-auto bg-white shadow-lg rounded-lg p-8">
+        <div className="min-h-screen py-10 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-5xl mx-auto border rounded-lg p-8">
                 {/* Header - Centered for impact */}
                 <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-600 mb-6">Hypertension</h2>
 
@@ -56,9 +56,9 @@ const HypertensionPage = () => {
                 <h3 className="text-lg md:text-xl lg:text-2xl text-gray-600 font-semibold mt-6 mb-2">Contact Our Doctor Today</h3>
                 <p className="text-gray-700 leading-relaxed mb-8">
                     Make sure that you’re not ignoring hypertension and that you understand the factors in your life that could lead to it.
-                    Contact our doctors at <a href='/' className='text-blue-500 no-underline hover:text-blue-800 hover:underline font-bold'>Healing Kidneys </a> 
+                    Contact our doctors at <a href='/' className='text-link-orange no-underline hover:text-blue-800 hover:underline font-bold'>Healing Kidneys </a> 
                      Institute of Houston in Conroe, The Woodlands, and Houston, TX, 
-                    at <a href="tel:8326102822" className="text-blue-500 no-underline hover:text-blue-800 hover:underline font-bold">(832) 610-2822</a> to learn
+                    at <a href="tel:8326102822" className="text-link-orange no-underline hover:text-blue-800 hover:underline font-bold">(832) 610-2822</a> to learn
                     more about hypertension and if it could affect you.
                 </p>
             </div>
