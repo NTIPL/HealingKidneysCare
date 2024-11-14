@@ -1,4 +1,5 @@
 import React from 'react';
+// import Colors from '../Components/Color';
 import { Breadcrumb } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
 import 'tailwindcss/tailwind.css';

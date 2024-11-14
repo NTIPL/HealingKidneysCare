@@ -1,4 +1,5 @@
 import React from 'react';
+import Colors from '../Components/Color';
 
 const DirectionPage = () => {
 
@@ -25,29 +26,29 @@ const DirectionPage = () => {
         <div className="min-h-screen py-10 sm:px-6 lg:px-8">
             {/* Combined Office and Locations Information */}
             <div className="max-w-5xl mx-auto">
-                <h2 className="text-xl md:text-2xl lg:text-3xl text-gray-600 font-bold mb-4">Office</h2>
-                <p className="text-gray-700 mb-4">
+                <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-4" style={{ color: Colors.headingBlue }}>Office</h2>
+                <p className=" mb-4" style={{ color: Colors.paragraphGray }}>
                     Our clinics are conveniently located within driving distance to serve patients in N. Houston, Spring, Porter, Woodlands, Conroe. We use advanced tools in diagnosis & treatment to offer the best care you deserve.
                 </p>
-                <p className="text-gray-700 mb-4">
+                <p className=" mb-4" style={{ color: Colors.paragraphGray }}>
                     Come see us at one of our 3 convenient locations below.
                 </p>
 
                 {/* Locations */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mt-2">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-2">
                     {locations.map((location, index) => (
-                        <div key={index} className="text-center border rounded-lg mt-4 p-3">
+                        <div key={index} className="text-center mt-4">
                             {/* Location name */}
-                            <h2 className="text-gray-700 font-bold text-xl mb-4">{location.name}</h2>
+                            <h2 className="font-bold text-2xl p-2" style={{ backgroundColor: Colors.SubmitButtonForm, color: Colors.WhiteText }}>{location.name}</h2>
                             {/* Location address */}
-                            <p className="text-gray-700 whitespace-pre-line mb-4">{location.address}</p>
+                            <p className="whitespace-pre-line" style={{ color: Colors.BlackText }}>{location.address}</p>
 
                             {/* Map iframe */}
-                            <div className="border rounded-lg overflow-hidden">
+                            <div className="border overflow-hidden">
                                 <iframe
                                     src={location.mapSrc}
                                     width="100%"
-                                    height="220"
+                                    height="250"
                                     style={{ border: 0 }}
                                     allowFullScreen=""
                                     loading="lazy"

@@ -1,4 +1,5 @@
 import React from 'react';
+import Colors from '../Components/Color';
 
 const siteMapData = [
     { title: 'Home', link: '/' },
@@ -30,14 +31,14 @@ const SiteMapPage = () => {
         <div className="min-h-screen py-10 px-4 sm:px-6 lg:px-8">
             <div className="max-w-5xl mx-auto border rounded-lg p-8">
                 {/* Breadcrumb */}
-                <div className="text-gray-600 mb-6">
-                    <a href="/" className="text-link-orange no-underline font-bold hover:underline">Home</a>
-                    <span className="mx-2">{'>'}</span>
-                    <span>Site Map - The Healing Kidneys Institute of Houston</span>
+                <div className="mb-6">
+                    <a href="/" className=" no-underline font-bold hover:underline" style={{ color: Colors.primaryOrange }}>Home</a>
+                    <span className="mx-2" style={{ color: Colors.headingBlue }}>{'>'}</span>
+                    <span className='' style={{ color: Colors.headingBlue }}>Site Map - The Healing Kidneys Institute of Houston</span>
                 </div>
 
                 {/* Header */}
-                <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-600 mb-6">
+                <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-6" style={{ color: Colors.headingBlue }}>
                     Site Map - The Healing Kidneys Institute of Houston
                 </h2>
 
@@ -46,14 +47,14 @@ const SiteMapPage = () => {
                     <ul className="list-disc">
                         {siteMapData.map((item, index) => (
                             <li key={index} className="space-y-2">
-                                <a href={item.link} className="text-link-orange no-underline hover:underline">
+                                <a href={item.link} className="no-underline hover:underline" style={{ color: Colors.primaryOrange }}>
                                     {item.title}
                                 </a>
                                 {item.subLinks && (
                                     <ul className="ml-1 list-disc">
                                         {item.subLinks.map((subItem, subIndex) => (
                                             <li key={subIndex}>
-                                                <a href={subItem.link} className="text-link-orange no-underline hover:underline">
+                                                <a href={subItem.link} className=" no-underline hover:underline" style={{ color: Colors.primaryOrange }}>
                                                     {subItem.title}
                                                 </a>
                                             </li>

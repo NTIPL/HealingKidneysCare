@@ -1,4 +1,5 @@
 import React from 'react';
+import Colors from '../Components/Color';
 
 const Locations = () => {
 
@@ -28,9 +29,9 @@ const Locations = () => {
                     {locations.map((location, index) => (
                         <div key={index} className="text-center mt-4">
                             {/* Location name */}
-                            <h2 className="text-white bg-[#c64f22] font-bold text-2xl p-2">{location.name}</h2>
+                            <h2 className="font-bold text-2xl p-2" style={{ backgroundColor: Colors.SubmitButtonForm, color: Colors.WhiteText }}>{location.name}</h2>
                             {/* Location address */}
-                            <p className="text-black whitespace-pre-line">{location.address}</p>
+                            <p className="whitespace-pre-line" style={{ color: Colors.BlackText }}>{location.address}</p>
 
                             {/* Map iframe */}
                             <div className="border overflow-hidden">

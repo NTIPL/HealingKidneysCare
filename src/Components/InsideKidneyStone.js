@@ -1,4 +1,5 @@
 import React from 'react';
+import Colors from '../Components/Color';
 import GoogleFormPage from './GoogleForm';
 import Locations from './Locations';
 import BlogLocationPage from './BlogLocation';
@@ -27,7 +28,9 @@ const InsideKidneyStonePage = () => {
     return (
         <div className="bg-gray-100 min-h-screen py-10 px-4 sm:px-6 lg:px-8">
             <div className="max-w-5xl mx-auto bg-white shadow-lg rounded-lg p-8">
-                <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-600 mb-6">Blog</h1>
+                <h1 className="text-xl md:text-2xl lg:text-3xl font-bold  mb-6"
+                    style={{ color: Colors.headingBlue }}
+                >Blog</h1>
                 <div className="space-y-8">
                     {blogPosts.map((post, index) => (
                         <div key={index} className="flex flex-col sm:flex-row border-b pb-4">
@@ -39,12 +42,16 @@ const InsideKidneyStonePage = () => {
                                 />
                             )}
                             <div className="flex-grow">
-                                <a href={post.link} className="text-lg md:text-xl lg:text-2xl font-bold text-link-orange no-underline hover:underline">
+                                <a href={post.link} className="text-lg md:text-xl lg:text-2xl font-bold no-underline hover:underline"
+                                    style={{ color: Colors.primaryOrange }}
+                                >
                                     {post.title}
                                 </a>
-                                <p className="text-sm text-gray-500">{post.date}</p>
-                                <p className="mt-2">{post.content}</p>
-                                <a href={post.link} className="text-link-orange font-bold no-underline hover:underline">Read more</a>
+                                <p className="text-sm" style={{ color: Colors.paragraphGray }}>{post.date}</p>
+                                <p className="mt-2" style={{ color: Colors.paragraphGray }}>{post.content}</p>
+                                <a href={post.link} className=" font-bold no-underline hover:underline"
+                                    style={{ color: Colors.primaryOrange }}
+                                >Read more</a>
                             </div>
                         </div>
                     ))}

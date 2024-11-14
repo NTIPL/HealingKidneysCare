@@ -1,30 +1,31 @@
 import React from 'react';
+import Colors from '../Components/Color';
 import InputMask from 'react-input-mask';
 
 const GoogleFormPage = () => {
 
-        // Handle form submission
-        const handleSubmit = (e) => {
-            e.preventDefault(); // Prevent default form submission
-    
-            // Prevent form submission if any input is invalid
-            if (!e.target.checkValidity()) {
-                alert('Please fill out the form correctly.');
-                return; // Stop further execution
-            }
-    
-            // Handle form submission logic here (e.g., sending data to an API)
-            alert('Form submitted successfully!');
-        };
+    // Handle form submission
+    const handleSubmit = (e) => {
+        e.preventDefault(); // Prevent default form submission
+
+        // Prevent form submission if any input is invalid
+        if (!e.target.checkValidity()) {
+            alert('Please fill out the form correctly.');
+            return; // Stop further execution
+        }
+
+        // Handle form submission logic here (e.g., sending data to an API)
+        alert('Form submitted successfully!');
+    };
 
     return (
         <div className="">
 
             {/* {Google Form} */}
-            <div className="max-w-5xl mx-auto bg-[#0f3f8a] rounded-lg p-8 mt-10">
+            <div className="max-w-5xl mx-auto rounded-lg p-8 mt-10" style={{ backgroundColor: Colors.bgFormColor }}>
                 <div className="text-center mb-6">
-                    <h1 className="text-xl md:text-2xl lg:text-3xl font-bold mb-1 text-white">CONTACT US</h1>
-                    <p className="text-white font-bold">Send Us an Email</p>
+                    <h1 className="text-xl md:text-2xl lg:text-3xl font-bold mb-1 " style={{ color: Colors.WhiteText }}>CONTACT US</h1>
+                    <p className="font-bold" style={{ color: Colors.WhiteText }}>Send Us an Email</p>
                 </div>
 
                 <form onSubmit={handleSubmit}>
@@ -81,13 +82,20 @@ const GoogleFormPage = () => {
                     </div>
 
                     <div className="text-center mt-4">
-                        <p className="text-white text-sm mb-4">
+                        <p className="text-sm mb-4" style={{ color: Colors.WhiteText }}>
                             Please do not submit any Protected Health Information (PHI).
                         </p>
 
                         <button
                             type="submit"
-                            className="bg-[#c64f22] text-white font-bold px-8 py-2 rounded-full hover:bg-[#b23f1d] transition-colors"
+                            className=" font-bold px-8 py-2 rounded-full  transition-colors"
+                            style={{
+                                backgroundColor: Colors.SubmitButtonForm,
+                                color: Colors.WhiteText,
+                                transition: 'background-color 0.3s ease'
+                            }}
+                            onMouseEnter={(e) => e.target.style.backgroundColor = Colors.HoverSubmitButtonForm}
+                            onMouseLeave={(e) => e.target.style.backgroundColor = Colors.SubmitButtonForm}
                         >
                             SUBMIT
                         </button>

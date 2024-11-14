@@ -1,4 +1,5 @@
 import React from 'react';
+import Colors from '../Components/Color';
 import WhatImage from '../assets/Banner.png';
 import AKIImage from '../assets/chronische-nierenerkrankung-small.webp';
 import cdkImage from '../assets/cardiovascularmortalitypost_889591.jpg';
@@ -49,17 +50,20 @@ const ServiceSectionpage = () => {
                             <div className="relative h-full w-full p-3 sm:p-4 md:p-6 flex items-end">
                                 {service.isHeader ? (
                                     <div className="absolute top-4 left-4">
-                                        <h3 className="text-white text-left font-bold text-xl sm:text-2xl md:text-3xl">
+                                        <h3 className="text-left font-bold text-xl sm:text-2xl md:text-3xl"
+                                            style={{ color: Colors.WhiteText }}>
                                             What
                                         </h3>
-                                        <h3 className="text-white text-left font-bold text-xl sm:text-2xl md:text-3xl underline mt-1">
+                                        <h3 className="text-left font-bold text-xl sm:text-2xl md:text-3xl underline mt-1"
+                                            style={{ color: Colors.WhiteText }}>
                                             We Do
                                         </h3>
                                     </div>
                                 ) : (
                                     <a
                                         href={service.path}
-                                        className="text-white text-left font-bold text-base sm:text-lg md:text-xl leading-tight sm:leading-snug max-w-[90%] no-underline"
+                                        className="text-left font-bold text-base sm:text-lg md:text-xl leading-tight sm:leading-snug max-w-[90%] no-underline"
+                                        style={{ color: Colors.WhiteText }}
                                     >
                                         {service.title}
                                     </a>

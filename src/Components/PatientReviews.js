@@ -1,123 +1,5 @@
-// import React from 'react';
-
-// const PatientReviews = () => {
-//     return (
-//         <div className="bg-gray-100">
-//             <div className="max-w-5xl mx-auto">
-
-//                 {/* Patient Reviews Section */}
-//                 <h2 className="text-center text-xl lg:text-2xl font-bold text-gray-800 mb-6">What our patients are saying</h2>
-
-//                 {/* Reviews and Ratings Links Section */}
-//                 <div className="text-center mb-10 bg-gray-200 p-2 rounded-lg flex flex-wrap justify-center items-center"> {/* Added flex wrap for responsiveness */}
-//                     <a href="#all-reviews" className="font-bold text-link-orange hover:text-blue-800 no-underline mx-2">All Reviews</a> 4.9
-//                     <span className="mx-2">|</span>
-
-//                     <a href="#google" className="flex items-center font-bold text-link-orange hover:text-blue-800 no-underline mx-2">
-//                         <img src={require('../assets/google.webp')} alt="Google" className="h-5 w-5 mr-1" /> {/* Google Icon */}
-//                         Google
-//                     </a> 3.5
-//                     <span className="mx-2">|</span>
-
-//                     <a href="#google5" className="flex items-center font-bold text-link-orange hover:text-blue-800 no-underline mx-2">
-//                         <img src={require('../assets/google.webp')} alt="Google" className="h-5 w-5 mr-1" /> {/* Google Icon */}
-//                         Google
-//                     </a> 5.0
-//                     <span className="mx-2">|</span>
-
-//                     <a href="#Healthgrades" className="flex items-center font-bold text-link-orange hover:text-blue-800 no-underline mx-2">
-//                         <img src={require('../assets/png-transparent-healthgrades-hd-logo.png')} alt="Healthgrades" className="h-5 w-5 mr-1" /> {/* Healthgrades Icon */}
-//                         Healthgrades
-//                     </a> 5.0
-//                     <span className="mx-2">|</span>
-
-//                     <a href="#Healthgrades5" className="flex items-center font-bold text-link-orange hover:text-blue-800 no-underline mx-2">
-//                         <img src={require('../assets/png-transparent-healthgrades-hd-logo.png')} alt="Healthgrades" className="h-5 w-5 mr-1" /> {/* Healthgrades Icon */}
-//                         Healthgrades
-//                     </a> 5.0
-//                 </div>
-
-
-//                 {/* Reviews Grid */}
-//                 <div className="flex flex-wrap mx-auto justify-center text-center p-0">
-//                     {[
-//                         {
-//                             name: "Charles Martin",
-//                             rating: "★★★★★",
-//                             description: "Always great, easy to talk to, pleasant, professional, and has a good bedside manner."
-//                         },
-//                         {
-//                             name: "Jo Ann Koontz",
-//                             rating: "★★★★★",
-//                             description: "Was referred by PCP for high blood pressure. Front desk very good about it."
-//                         },
-//                         {
-//                             name: "Richard Kohler",
-//                             rating: "★★★★★",
-//                             description: "I have nothing bad to say. Medical staff helped me get medication assistance."
-//                         },
-//                         {
-//                             name: "Alex Johnson",
-//                             rating: "★★★★★",
-//                             description: "Excellent service and care. I always feel listened to and well cared for."
-//                         },
-//                         {
-//                             name: "Linda Green",
-//                             rating: "★★★★★",
-//                             description: "Very compassionate and skilled doctors. I highly recommend their care."
-//                         },
-//                         {
-//                             name: "Tom White",
-//                             rating: "★★★★★",
-//                             description: "Highly knowledgeable staff. They made my treatment a smooth experience."
-//                         },
-//                         {
-//                             name: "Samantha Brown",
-//                             rating: "★★★★★",
-//                             description: "The staff is very attentive and supportive. They always provide helpful insights."
-//                         },
-//                         {
-//                             name: "James Lee",
-//                             rating: "★★★★★",
-//                             description: "Excellent follow-up and care. The doctors are very thorough in explaining treatment."
-//                         }
-//                     ].map((review, index) => (
-//                         <div key={index} className="bg-white border p-6 mb-4 rounded-lg flex flex-col items-center justify-center w-full sm:w-1/2 lg:w-1/4">
-
-//                             {/* <div key={index} className="bg-white flex-1 p-6 rounded-lg shadow-lg flex flex-col items-center justify-center min-w-[250px] max-w-full sm:max-w-[45%] lg:max-w-[30%]"> */}
-//                             {/* <div key={index} className="bg-white p-6 w-60 m-2 rounded-lg shadow-lg flex flex-col items-center justify-center"> */}
-//                             <div className="text-yellow-500 text-xl mb-4">{review.rating}</div>
-//                             <h3 className="font-bold text-base text-gray-800 mb-2">{review.name}</h3>
-//                             <p className="text-base text-left text-gray-600">{review.description}</p>
-//                             <button className="border-1 border-t-blue-400 border-blue-400 font-bold text-black px-4 py-2 rounded-full mt-2 hover:bg-blue-500">
-//                                 READ MORE
-//                             </button>
-
-
-//                         </div>
-//                     ))}
-//                 </div>
-
-
-//                 {/* Load More Button
-//                 < div className="text-center mt-6" >
-//                     <button className="bg-blue-500 font-bold text-white px-6 py-2 rounded-full hover:bg-blue-800">
-//                         LOAD MORE
-//                     </button>
-//                 </div> */}
-
-//             </div>
-//         </div>
-//     );
-// };
-
-// export default PatientReviews;
-
-
-
-
-
 import React, { useState } from 'react';
+import Colors from '../Components/Color';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const PatientReviews = () => {
@@ -566,6 +448,8 @@ const PatientReviews = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const [isHovered, setIsHovered] = useState(false);
+
   const handlePrevious = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? reviews.length - 1 : prevIndex - 1
@@ -584,7 +468,7 @@ const PatientReviews = () => {
         <div className="flex flex-col items-center text-center">
 
           {/* Title */}
-          <h2 className="text-3xl font-bold text-blue-900 mb-4"> {/* Reduced bottom margin */}
+          <h2 className="text-3xl font-bold mb-4" style={{ color: Colors.headingBlue }}> {/* Reduced bottom margin */}
             Patient Reviews
           </h2>
 
@@ -602,17 +486,23 @@ const PatientReviews = () => {
 
               {/* Review Content */}
               <div className="flex-1 px-4 min-h-[200px] flex flex-col justify-center">
-                <p className="text-gray-700 italic text-lg mb-2 transition-opacity duration-300"> {/* Reduced bottom margin */}
+                <p className="italic text-lg mb-2 transition-opacity duration-300" style={{ color: Colors.paragraphGray }}> {/* Reduced bottom margin */}
                   {reviews[currentIndex].text}
                 </p>
 
-                <p className="text-blue-900 font-medium">
+                <p className="font-medium" style={{ color: Colors.headingBlue }}>
                   <a
                     href={reviews[currentIndex].link || '#'} // Fallback to '#' if no link is provided
-                    className="no-underline hover:underline"
+                    className="no-underline hover:no-underline"
+                    style={{
+                      color: isHovered ? Colors.reviewsLinkshover : Colors.headingBlue, // Change color based on hover state
+                      transition: 'color 0.3s ease', // Smooth transition for hover effect
+                    }}
                     aria-label={`More reviews from ${reviews[currentIndex].author}`}
                     target="_blank" // This makes the link open in a new tab
                     rel="noopener noreferrer" // This improves security
+                    onMouseEnter={() => setIsHovered(true)} // Set hover state to true
+                    onMouseLeave={() => setIsHovered(false)} // Set hover state to false
                   >
                     - {reviews[currentIndex].author}
                   </a>
