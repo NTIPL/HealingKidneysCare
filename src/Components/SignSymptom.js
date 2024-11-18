@@ -31,7 +31,7 @@ const SignSymptomPage = () => {
         <div className="min-h-screen py-10 px-4 sm:px-6 lg:px-8">
             <div className="max-w-5xl mx-auto border rounded-lg p-8">
                 {/* Header */}
-                <a href='/signs-symptoms-kidney-stones-want-to-see-a-doctor' className="text-lg md:text-xl lg:text-2xl no-underline hover:underline font-bold mb-2"
+                <a href='/signs-symptoms-kidney-stones-want-to-see-a-doctor' className="text-lg md:text-xl lg:text-2xl no-underline hover:underline uppercase mb-2"
                     style={{ color: Colors.primaryOrange }}
                 >
                     Signs and Symptoms of Kidney Stones: When to See a Doctor
@@ -114,7 +114,7 @@ const SignSymptomPage = () => {
                 <p className=" leading-relaxed mb-8" style={{ color: Colors.paragraphGray }}>
                     The Healing Kidneys Institute of Houston doctors can help you heal from and prevent kidney stones in Houston, Conroe, & The Woodlands, TX.
                     Most stones pass on their own, but our doctors have methods when they don’t.
-                    To make an appointment at any of our three offices, call us at
+                    To make an appointment at any of our three offices, call us at {" "}
                     <a
                         href="tel:+18326102822"
                         className="no-underline font-bold"

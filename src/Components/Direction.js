@@ -1,5 +1,6 @@
 import React from 'react';
 import Colors from '../Components/Color';
+import BlogLocationPage from './BlogLocation';
 
 const DirectionPage = () => {
 
@@ -23,7 +24,7 @@ const DirectionPage = () => {
 
     return (
 
-        <div className="min-h-screen py-10 sm:px-6 lg:px-8">
+        <div className="min-h-screen px-4 py-10 sm:px-6 lg:px-8">
             {/* Combined Office and Locations Information */}
             <div className="max-w-5xl mx-auto">
                 <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-4" style={{ color: Colors.headingBlue }}>Office</h2>
@@ -59,6 +60,11 @@ const DirectionPage = () => {
                     ))}
                 </div>
             </div>
+
+            <section>
+                <BlogLocationPage />
+            </section>
+
         </div>
     );
 };

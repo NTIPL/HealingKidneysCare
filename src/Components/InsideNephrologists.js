@@ -31,7 +31,7 @@ const InsideNephrologistsPage = () => {
                                 />
                             )}
                             <div className="flex-grow">
-                                <a href={post.link} className="text-lg md:text-xl lg:text-2xl font-bold no-underline hover:underline" 
+                                <a href={post.link} className="text-lg md:text-xl lg:text-2xl uppercase no-underline hover:underline" 
                                 style={{ color: Colors.primaryOrange }}>
                                     {post.title}
                                 </a>

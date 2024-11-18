@@ -10,8 +10,8 @@ const WelcomeBlogPage = () => {
         <div className="min-h-screen py-10 px-4 sm:px-6 lg:px-8">
             <div className="max-w-5xl mx-auto border rounded-lg p-8">
                 {/* Header */}
-                <a href='/welcome-to-our-blog' className="text-lg md:text-xl lg:text-2xl no-underline hover:underline font-bold mb-2" 
-                style={{ color: Colors.primaryOrange }}>
+                <a href='/welcome-to-our-blog' className="text-lg md:text-xl lg:text-2xl no-underline hover:underline uppercase mb-2"
+                    style={{ color: Colors.primaryOrange }}>
                     Welcome to Our Blog
                 </a>
                 <p className=" mb-6" style={{ color: Colors.paragraphGray }}>Posted on: Jul. 10, 2023.</p> {/* Add the posted date here */}
@@ -27,7 +27,6 @@ const WelcomeBlogPage = () => {
                         We hope you find our blog to be a great resource for keeping up to date with proper kidney care and treatments.
                         We welcome all comments and questions.
                     </p>
-
 
                 </div>
                 <div>

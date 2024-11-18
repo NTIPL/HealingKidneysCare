@@ -14,14 +14,15 @@ const Homepage = () => {
                 <ServiceSectionpage />
             </section>
             <section>
+                <Carsouelpage />
+            </section>
+            <section>
                 <PatientReviews />
             </section>
             <section>
                 <Locations />
             </section>
-            <section>
-                <Carsouelpage />
-            </section>
+            
 
         </div>
     );

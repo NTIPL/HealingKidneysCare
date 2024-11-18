@@ -20,3 +20,4 @@ const Colors = {
   
   export default Colors;
 
+  // primaryBlue: '#0f3f8a',

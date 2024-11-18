@@ -1,8 +1,5 @@
 import React from 'react';
 import BlogContentPage from './BlogContents';
-import GoogleFormPage from './GoogleForm';
-import Locations from './Locations';
-import BlogLocationPage from './BlogLocation';
 
 const BlogPage = () => {
 
@@ -11,18 +8,6 @@ const BlogPage = () => {
 
             <section>
                 <BlogContentPage />
-            </section>
-
-            <section>
-                <GoogleFormPage />
-            </section>
-
-            <section>
-                <Locations />
-            </section>
-
-            <section>
-                <BlogLocationPage />
             </section>
 
         </div>

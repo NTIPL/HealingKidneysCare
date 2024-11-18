@@ -8,6 +8,12 @@ import image11 from '../assets/Kidney_Stones.jpg';
 const BlogContentPage = () => {
     const blogPosts = [
         {
+            title: "Welcome to Our Blog",
+            date: "Jul. 10, 2023",
+            content: "The Healing Kidneys Institute of Houston would like to welcome you to our blog. Here you will find informative and useful postings about your nephrology care and our practice. At The Healing Kidneys Institute of Houston, we believe that educated patients are better prepared to make decisions regarding their overall health and well-being.",
+            link: "/welcome-to-our-blog" // Sample link, update with actual URL if available
+        },
+        {
             title: "Signs and Symptoms of Kidney Stones: When To See a Doctor",
             date: "Oct. 24, 2024",
             content: "Your kidneys are a vital organ that helps cleanse the body by filtering waste to create urine and help produce certain hormones. Therefore, if you have signs of problems such as kidney stones in Houston, Conroe, & The Woodlands, TX, you should seek medical help. Luckily, you have a strong team of doctors at The Healing Kidneys Institute of Houston to assist you.",
@@ -35,12 +41,7 @@ const BlogContentPage = () => {
             image: image11,
             link: "/kidney-stones-causes-for-concern" // Sample link, update with actual URL if available
         },
-        {
-            title: "Welcome to Our Blog",
-            date: "Jul. 10, 2023",
-            content: "The Healing Kidneys Institute of Houston would like to welcome you to our blog. Here you will find informative and useful postings about your nephrology care and our practice. At The Healing Kidneys Institute of Houston, we believe that educated patients are better prepared to make decisions regarding their overall health and well-being.",
-            link: "/welcome-to-our-blog" // Sample link, update with actual URL if available
-        },
+        
     ];
 
     return (
@@ -58,7 +59,7 @@ const BlogContentPage = () => {
                                 />
                             )}
                             <div className="flex-grow">
-                                <a href={post.link} className="text-lg md:text-xl lg:text-2xl font-bold no-underline hover:underline" style={{ color: Colors.primaryOrange }}>
+                                <a href={post.link} className="text-lg md:text-xl lg:text-2xl no-underline hover:underline uppercase" style={{ color: Colors.primaryOrange }}>
                                     {post.title}
                                 </a>
                                 <p className="text-sm " style={{ color: Colors.paragraphGray }}>{post.date}</p>

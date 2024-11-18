@@ -33,7 +33,7 @@ const HowNephrologistsPage = () => {
         <div className="min-h-screen py-10 px-4 sm:px-6 lg:px-8">
             <div className="max-w-5xl mx-auto border rounded-lg p-8">
                 {/* Header */}
-                <a href='/how-nephrologists-diagnose-kidney-disorders' className="text-lg md:text-xl lg:text-2xl no-underline hover:underline font-bold text-link-orange mb-2"
+                <a href='/how-nephrologists-diagnose-kidney-disorders' className="text-lg md:text-xl lg:text-2xl no-underline hover:underline uppercase mb-2"
                     style={{ color: Colors.primaryOrange }}>
                     How Nephrologists Diagnose Kidney Disorders
                 </a>

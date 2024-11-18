@@ -9,25 +9,89 @@ import { PhoneOutlined, MailOutlined } from '@ant-design/icons';
 import FaxIcon from '../assets/FaxIcon';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import ServiceExcellenceLogo from './ServiceExcellence';
+// import ServiceExcellenceLogo from './ServiceExcellence';
 
 const CustomNavbar = () => {
+
+    const leftSideIcons = [
+        {
+            type: "link",
+            icon: <PhoneOutlined className="me-2 text-white font-bold" />,
+            text: "(832) 610-2822",
+            href: "tel:+18326102822",
+            className: "text-white no-underline font-bold"
+        },
+        {
+            type: "icon",
+            icon: <FaxIcon className="me-2 text-white font-bold" />,
+            text: "(936) 777-8831",
+        },
+        {
+            type: "link",
+            icon: <MailOutlined className="me-2 text-white font-bold" />,
+            text: "healingkidneys@gmail.com",
+            href: "mailto:healingkidneys@gmail.com",
+            className: "text-white no-underline font-bold"
+        },
+    ];
+
+    const rightSideLinks = [
+        {
+            text: "Patient Portal",
+            href: "https://mychart.davitaphysiciansolutions.com/MyChart/Authentication/Login?",
+            external: true,
+            hoverColor: "hover:text-blue-600",
+        },
+        {
+            text: "Referrals",
+            href: "/",
+            external: false,
+            hoverColor: "hover:text-[#0f3f8a]",
+        },
+        {
+            text: "Pay Mybill",
+            href: "/",
+            external: false,
+            hoverColor: "hover:text-[#0f3f8a]",
+        },
+        {
+            text: "Feedback",
+            href: "/",
+            external: false,
+            hoverColor: "hover:text-[#0f3f8a]",
+        },
+        {
+            text: "Rocket",
+            href: "https://hkscheduling.vercel.app/",
+            external: true,
+            hoverColor: "hover:text-[#0f3f8a]",
+        },
+    ];
+
     const mainLinks = [
         { name: "Home", href: "/" },
         { name: "Physicians", href: "/physicians" },
         { name: "Services", href: "/services", isDropdown: true },
         { name: "Patient Registration", href: "/patient-registration" },
         { name: "Education", href: "/education", isDropdown: true },
-        { name: "Locations/Directions", href: "/locations-directions" }
+        { name: "Locations/Directions", href: "/locations-directions" },
+        { name: "Contact Us", href: "/contact-us" },
+
     ];
 
-    const educationLinks = [{ name: "Blog", href: "/education/blog" }];
+    const educationLinks = [
+        { name: "Blog", href: "/education/blog" },
+        { name: "Overview", href: "http://localhost:3000/education" },
+
+    ];
+
     const servicesLinks = [
         { name: "Dialysis", href: "/services/dialysis" },
         { name: "Hypertension", href: "/services/hypertension" },
         { name: "Kidney Disease", href: "/services/kidney-disease" },
         { name: "What is a Kidney Doctor?", href: "/services/kidney-doctor" },
-        { name: "Kidney Stones", href: "/services/kidney-stones" }
+        { name: "Kidney Stones", href: "/services/kidney-stones" },
+        { name: "All Services", href: "http://localhost:3000/services" },
     ];
 
     return (
@@ -37,32 +101,36 @@ const CustomNavbar = () => {
                 <div className="max-w-5xl mx-auto p-1">
                     <Row className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
                         {/* Left Side Icons */}
-                        <Col xs="auto" className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4">
-                            <div className="flex items-center border border-white rounded-lg p-1 cursor-pointer contact-info">
-                                <a href="tel:+18326102822" className="text-white no-underline font-bold" ><PhoneOutlined className="me-2 text-white font-bold" />(832) 610-2822</a>
-                            </div>
-                            <div className="flex items-center border border-white rounded-lg p-1 cursor-pointer contact-info">
-                                <FaxIcon className="me-2 text-white font-bold" />                                 <span className="text-white font-bold">(936) 777-8831</span>
-                            </div>
-                            <div className="flex items-center border border-white rounded-lg p-1 cursor-pointer contact-info">
-                                <a href="mailto:healingkidneys@gmail.com" className="text-white no-underline font-bold" ><MailOutlined className="me-2 text-white font-bold" />
-                                    healingkidneys@gmail.com</a>
-                            </div>
+                        <Col xs="auto" className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-2">
+                            {leftSideIcons.map((item, index) => (
+                                <div key={index} className="flex items-center border border-white rounded-lg p-1 cursor-pointer contact-info">
+                                    {item.type === "link" ? (
+                                        <a href={item.href} className={item.className}>
+                                            {item.icon}
+                                            {item.text}
+                                        </a>
+                                    ) : (
+                                        <>
+                                            {item.icon}
+                                            <span className="text-white font-bold">{item.text}</span>
+                                        </>
+                                    )}
+                                </div>
+                            ))}
                         </Col>
 
                         {/* Right Side Links */}
-                        <Col xs="auto" className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4 font-bold text-center sm:text-left">
-                            <Link to="https://mychart.davitaphysiciansolutions.com/MyChart/Authentication/Login?" target='_blank' className=" text-white hover:text-blue-600 hover:underline no-underline">
-                                Patient Portal
-                            </Link>
-                            <Link to="/" className=" text-white hover:text-[#0f3f8a] hover:underline no-underline">
-                                Referrals
-                            </Link>
-                            <Link to="/" className=" text-white hover:text-[#0f3f8a] hover:underline no-underline">                                 Pay Mybill
-                            </Link>
-                            <Link to="/" className=" text-white hover:text-[#0f3f8a] hover:underline no-underline">
-                                Feedback
-                            </Link>
+                        <Col xs="auto" className="flex flex-wrap items-center justify-center space-y-0 sm:space-y-0 sm:space-x-2 sm:justify-start font-bold text-center sm:text-left">
+                            {rightSideLinks.map((link, index) => (
+                                <Link
+                                    key={index}
+                                    to={link.href}
+                                    target={link.external ? "_blank" : "_self"}
+                                    className={`text-white ${link.hoverColor} hover:underline no-underline px-1 sm:px-0`}
+                                >
+                                    {link.text}
+                                </Link>
+                            ))}
                         </Col>
                     </Row>
                 </div>
@@ -87,7 +155,7 @@ const CustomNavbar = () => {
                             {mainLinks.map((link, index) => {
                                 if (link.isDropdown) {
                                     return (
-                                        <NavDropdown title={<span className="text-black font-bold">{link.name}</span>} id={`dropdown-${index}`} className="px-3" key={index}>
+                                        <NavDropdown title={<span className="text-black font-bold">{link.name}</span>} id={`dropdown-${index}`} className="px-2" key={index}>
                                             {link.name === "Services" && servicesLinks.map((service, serviceIndex) => (
                                                 <NavDropdown.Item key={serviceIndex} as={Link} to={service.href} className="text-black font-bold">
                                                     {service.name}
@@ -102,7 +170,7 @@ const CustomNavbar = () => {
                                     );
                                 }
                                 return (
-                                    <Nav.Link key={index} as={Link} to={link.href} className="px-3 text-black font-bold">
+                                    <Nav.Link key={index} as={Link} to={link.href} className="px-2 text-black font-bold">
                                         {link.name}
                                     </Nav.Link>
                                 );
@@ -111,12 +179,9 @@ const CustomNavbar = () => {
                     </Navbar.Collapse>
                 </Container>
 
-                {/* Service Excellence Logo at the right bottom half */}
-                {/* <div className="absolute right-0 top-12 mr-4"> */}
-                {/* <div className="absolute right-0 top-16"> */}
-                <div className="absolute right-0 top-16 sm:top-16 md:top-14 lg:top-10">
+                {/* <div className="absolute right-0 top-16 sm:top-16 md:top-14 lg:top-10">
                     <ServiceExcellenceLogo />
-                </div>
+                </div> */}
 
             </Navbar>
 

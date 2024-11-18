@@ -7,6 +7,7 @@ import PhysiciansPage from "./Components/Physicians";
 import ServicesPage from "./Components/Services";
 import EducationPage from "./Components/Education";
 import BlogPage from './Components/Blog';
+import ContactUsPage from './Components/Contact';
 import Footer from "./Components/footer";
 import DialysisPage from "./Components/Dialysis";
 import HypertensionPage from "./Components/Hypertension";
@@ -47,6 +48,7 @@ function App() {
           <Route path="/patient-registration" element={<PatientRegistrationPage />} />
           <Route path="/education/blog" element={<BlogPage />} />
           <Route path="/locations-directions" element={<DirectionPage />} />
+          <Route path="/contact-us" element={<ContactUsPage />} />
           <Route path="/signs-symptoms-kidney-stones-want-to-see-a-doctor" element={<SignSymptomPage />} />
           <Route path="/how-nephrologists-diagnose-kidney-disorders" element={<HowNephrologistsPage />} />
           <Route path="/understanding-hypertension-causes-symptoms-and-risk-factors" element={<UnderstandingHypertensionPage />} />

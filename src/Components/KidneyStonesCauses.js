@@ -32,7 +32,7 @@ const KidneyStonesCausesPage = () => {
         <div className="min-h-screen py-10 px-4 sm:px-6 lg:px-8">
             <div className="max-w-5xl mx-auto border rounded-lg p-8">
                 {/* Header */}
-                <a href='/kidney-stones-causes-for-concern' className="text-lg md:text-xl lg:text-2xl no-underline hover:underline font-bold mb-2"
+                <a href='/kidney-stones-causes-for-concern' className="text-lg md:text-xl lg:text-2xl no-underline hover:underline uppercase mb-2"
                     style={{ color: Colors.primaryOrange }}>
                     Kidney Stones: Causes for Concern
                 </a>

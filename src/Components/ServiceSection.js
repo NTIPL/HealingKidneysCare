@@ -14,14 +14,20 @@ const ServiceSectionpage = () => {
     // Service Data
     const services = [
         { title: "What We Do", image: WhatImage, textColor: "text-white", path: "/", isHeader: true },
-        { title: "Acute Kidney Injury (AKI)", image: AKIImage, path: "/" },
-        { title: "Chronic Kidney Disease (CKD)", image: cdkImage, path: "/services/kidney-stones" },
+        { title: "Acute Kidney Injury (AKI)", image: AKIImage, path: "/", disableLink: true },
+        { title: "Chronic Kidney Disease (CKD)", image: cdkImage, path: "/services/kidney-disease" },
         { title: "End Stage Renal Disease/Dialysis", image: endrenalImage, path: "/services/dialysis" },
         { title: "Kidney Stones & Cysts", image: kscImage, path: "/services/kidney-stones" },
         { title: "Hypertension Management", image: hyperImage, path: "/services/hypertension" },
         { title: "Post-Transplant Care", image: ptcImage, path: "/" },
         { title: "Hyponatremia", image: htImage, path: "/" },
     ];
+
+    const handleLinkClick = (e, service) => {
+        if (service.disableLink) {
+            e.preventDefault(); // Prevents navigation if the link is disabled
+        }
+    };
 
 
     return (
@@ -62,6 +68,7 @@ const ServiceSectionpage = () => {
                                 ) : (
                                     <a
                                         href={service.path}
+                                        onClick={(e) => handleLinkClick(e, service)}
                                         className="text-left font-bold text-base sm:text-lg md:text-xl leading-tight sm:leading-snug max-w-[90%] no-underline"
                                         style={{ color: Colors.WhiteText }}
                                     >
