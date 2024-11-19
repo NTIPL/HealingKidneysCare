@@ -34,12 +34,25 @@ const ServiceSectionpage = () => {
 
         <div className="py-10">
 
+            {/* Header Section */}
+            <div className="max-w-5xl mx-auto mb-4">
+                <h1 className="text-xl md:text-2xl lg:text-3xl text-center font-bold" style={{ color: Colors.headingBlue }}>
+                    Healing Kidneys
+                </h1>
+            </div>
+
+            <div className="max-w-5xl mx-auto mb-5">
+                <h4 className="text-lg text-center" style={{ color: Colors.paragraphGray }}>
+                    North Houston Woodlands And Conroe's Trusted Comprehensive Kidney Care Provider Whenever You Need
+                </h4>
+            </div>
+
             <div className="max-w-5xl mx-auto">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
                     {services.map((service, index) => (
                         <div
                             key={index}
-                            className="relative overflow-hidden rounded-lg aspect-square w-full border-0" // Adjusted height for smaller screens
+                            className="relative overflow-hidden rounded-lg w-full border-0 aspect-[9/4] sm:aspect-square lg:aspect-square" // Adjusted height for smaller screens
                             style={{
                                 backgroundColor: service.isHeader ? '#c64f22' : '#4b5f74', // Color for non-header services
                                 backgroundImage: service.image ? `url(${service.image})` : 'none', // Image if provided

@@ -30,11 +30,11 @@ const Carsouelpage = () => {
     return (
         <div className="mt-10">
             {/* Header Section */}
-            <div className="max-w-5xl mx-auto mb-4">
+            {/* <div className="max-w-5xl mx-auto mb-4">
                 <h1 className="text-xl md:text-2xl lg:text-3xl text-center" style={{ color: Colors.headingBlue }}>
                     NORTH HOUSTON, WOODLANDS AND CONROE'S TRUSTED COMPREHENSIVE KIDNEY CARE PROVIDER WHENEVER YOU NEED
                 </h1>
-            </div>
+            </div> */}
 
             <div className="max-w-5xl mx-auto">
                 {/* Main Content Section */}
