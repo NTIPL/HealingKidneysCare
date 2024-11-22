@@ -52,7 +52,7 @@ const ServiceSectionpage = () => {
                     {services.map((service, index) => (
                         <div
                             key={index}
-                            className="relative overflow-hidden rounded-lg w-full border-0 aspect-[9/4] sm:aspect-square lg:aspect-square" // Adjusted height for smaller screens
+                            className="relative overflow-hidden rounded-lg w-full border-0 aspect-[9/4] sm:aspect-square md:aspect-[6/3] lg:aspect-square" // Adjusted height for smaller screens
                             style={{
                                 backgroundColor: service.isHeader ? '#c64f22' : '#4b5f74', // Color for non-header services
                                 backgroundImage: service.image ? `url(${service.image})` : 'none', // Image if provided
