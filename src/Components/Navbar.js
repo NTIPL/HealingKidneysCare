@@ -1,113 +1,238 @@
 import React, { useState } from 'react';
-import { Layout, Menu, Row, Col } from 'antd';
-import { PhoneOutlined, MailOutlined } from '@ant-design/icons'; // Import necessary icons
-import FaxIcon from './../assets/FaxIcon'; // Ensure correct path to FaxIcon
-import logo from '../assets/HKI-2019-Logo.png.webp'; // Ensure correct path to logo
+import { Link } from 'react-router-dom';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import Image from 'react-bootstrap/Image';
+import { PhoneOutlined, MailOutlined } from '@ant-design/icons';
+import FaxIcon from '../assets/FaxIcon';
 
-const { Header } = Layout;
+const CustomNavbar = () => {
+    const [expanded, setExpanded] = useState(false);
 
-const Navbar = () => {
-    const [menuVisible, setMenuVisible] = useState(false);
-    const [current, setCurrent] = useState('1'); // Add state to track current menu item
-
-    const toggleMenu = () => {
-        setMenuVisible(!menuVisible);
+    const handleLinkClick = () => {
+        setExpanded(false); // Close the navbar on mobile when a link is clicked
     };
 
-    const handleClick = (e) => {
-        setCurrent(e.key); // Update the current selected menu item
-    };
+    const leftSideIcons = [
+        {
+            type: "link",
+            icon: <PhoneOutlined className="me-2 text-white font-bold" />,
+            text: "(832) 610-2822",
+            href: "tel:+18326102822",
+            className: "text-white no-underline font-bold"
+        },
+        {
+            type: "icon",
+            icon: <FaxIcon className="me-2 text-white font-bold" />,
+            text: "(936) 777-8831",
+        },
+        {
+            type: "link",
+            icon: <MailOutlined className="me-2 text-white font-bold" />,
+            text: "healingkidneys@gmail.com",
+            href: "mailto:healingkidneys@gmail.com",
+            className: "text-white no-underline font-bold"
+        },
+    ];
+
+    const rightSideLinks = [
+        {
+            text: "Patient Portal",
+            href: "https://mychart.davitaphysiciansolutions.com/MyChart/Authentication/Login?",
+            external: true,
+            hoverColor: "hover:text-blue-600",
+        },
+        {
+            text: "Pay Mybill",
+            href: "/",
+            external: false,
+            hoverColor: "hover:text-[#0f3f8a]",
+        },
+        {
+            text: "Referrals",
+            href: "/",
+            external: false,
+            hoverColor: "hover:text-[#0f3f8a]",
+        },
+    ];
+
+    const mainLinks = [
+        { name: "Home", href: "/" },
+        { name: "Physicians", href: "/physicians" },
+        { name: "Services", href: "/services", isDropdown: true },
+        { name: "Patient Registration", href: "/patient-registration" },
+        { name: "Education", href: "/education", isDropdown: true },
+        { name: "Locations/Directions", href: "/locations-directions" },
+        { name: "Contact Us", href: "/contact-us" },
+    ];
+
+    const educationLinks = [
+        { name: "Blog", href: "/education/blog" },
+        { name: "Overview", href: "/education" },
+    ];
+
+    const servicesLinks = [
+        { name: "Dialysis", href: "/services/dialysis" },
+        { name: "Hypertension", href: "/services/hypertension" },
+        { name: "Kidney Disease", href: "/services/kidney-disease" },
+        { name: "What is a Kidney Doctor?", href: "/services/kidney-doctor" },
+        { name: "Kidney Stones", href: "/services/kidney-stones" },
+        { name: "All Services", href: "/services" },
+    ];
 
     return (
-        <Layout>
-            {/* Top Header with logo, mobile number, fax, and email */}
-            <div className="bg-pink p-4 border-b border-gray-200">
-                <Row justify="space-between" align="middle" gutter={[16, 16]} className="flex-wrap">
-                    {/* Logo Section */}
-                    <Col xs={24} sm={8} lg={6} className="flex justify-center sm:justify-start">
-                        <div className="flex items-center">
-                            <img src={logo} alt="Logo" className="w-40 h-auto mr-2" />
-                        </div>
-                    </Col>
+        <>
+            {/* Contact Info Section */}
+            <div className="bg-[#c64f22] py-0 md:py-1 lg:py-2">
+                <div className="max-w-5xl mx-auto py-0 md:py-1">
+                    <div className="flex-none md:flex md:flex-row justify-between items-center space-y-2 md:space-y-0">
 
-                    {/* Contact Info Section */}
-                    <Col xs={24} sm={16} lg={18} className="flex justify-center sm:justify-end">
-                        <div className="flex space-x-4">
-                            <div className="border border-blue-500 px-4 py-2 rounded-md text-blue-500 flex items-center">
-                                <PhoneOutlined className="mr-2" />
-                                (832) 610-2822
+                        {/* Mobile Specific Section */}
+                        <div className="block md:hidden bg-white">
+                            {/* Top Division for Logo */}
+                            <div className="flex justify-center mt-2">
+                                <Image
+                                    src={require('../assets/HKI-2019-Logo.png.webp')}
+                                    alt="Logo"
+                                    width="160"
+                                    height="60"
+                                />
                             </div>
-                            <div className="border border-blue-500 px-4 py-2 rounded-md text-blue-500 flex items-center">
-                                <FaxIcon className="text-xl mr-2" />
-                                (936) 777-8831
+                            {/* Second Division for Telephone and Email */}
+                            <div className="flex justify-center mt-2 space-x-2 rounded-lg p-2">
+                                <a href="tel:+18326102822" className="text-black no-underline flex items-center space-x-1 border border-black rounded-lg px-2 py-1">
+                                    <span>(832) 610-2822</span>
+                                </a>
+                                <a href="mailto:healingkidneys@gmail.com" className="text-black no-underline flex items-center space-x-1 border border-black rounded-lg px-2 py-1">
+                                    <span>healingkidneys@gmail.com</span>
+                                </a>
                             </div>
-                            <div className="border border-blue-500 px-4 py-2 rounded-md text-blue-500 flex items-center">
-                                <MailOutlined className="mr-2" />
-                                <span>healingkidneys@gmail.com</span>
+                            {/* Third Division for Links */}
+                            <div className="flex justify-center mt-2 mb-3 space-x-2">
+                                {rightSideLinks.map((link, index) => (
+                                    <Link
+                                        key={index}
+                                        to={link.href}
+                                        target={link.external ? "_blank" : "_self"}
+                                        className={`text-[#c64f22] ${link.hoverColor} font-bold hover:underline no-underline px-3`}
+                                    >
+                                        {link.text}
+                                    </Link>
+                                ))}
                             </div>
                         </div>
-                    </Col>
-                </Row>
+
+                        {/* Left Side Icons for larger devices */}
+                    
+                        <div xs="auto" className="hidden md:flex md:items-center md:justify-center md:grid-cols-2 md:gap-0 flex-wrap items-center justify-center space-y-0 sm:space-y-0 sm:space-x-2 sm:justify-start 
+                            font-bold text-center sm:text-left md:pl-4 lg:pl-0">
+                            {leftSideIcons.map((item, index) => (
+                                <div key={index} className="flex items-center border border-white rounded-lg p-1 mt-1 mb-1 cursor-pointer contact-info md:whitespace-nowrap">
+                                    {item.type === "link" ? (
+                                        <a href={item.href} className={item.className}>
+                                            {item.icon}
+                                            {item.text}
+                                        </a>
+                                    ) : (
+                                        <>
+                                            {item.icon}
+                                            <span className="text-white font-bold">{item.text}</span>
+                                        </>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Right Side Links for larger devices */}
+                        <div
+                            xs="auto"
+                            className="hidden md:flex md:items-center md:justify-center md:grid-cols-2 md:gap-0 flex-wrap items-center justify-center space-y-0 sm:space-y-0 sm:space-x-2 sm:justify-start 
+                            font-bold text-center sm:text-left md:pr-4 lg:pr-0"
+                        >
+                            {rightSideLinks.map((link, index) => (
+                                <Link
+                                    key={index}
+                                    to={link.href}
+                                    target={link.external ? "_blank" : "_self"}
+                                    className={`text-white ${link.hoverColor} hover:underline no-underline px-1 sm:px-0`}
+                                >
+                                    {link.text}
+                                </Link>
+                            ))}
+
+                            {/* Additional links for larger devices */}
+                            <div className="hidden md:flex space-x-2">
+                                <Link
+                                    to="/"
+                                    className="text-white hover:text-[#0f3f8a] hover:underline no-underline px-1 sm:px-0"
+                                >
+                                    Feedback
+                                </Link>
+                                <Link
+                                    to="https://hkscheduling.vercel.app/"
+                                    target="_blank"
+                                    className="text-white hover:text-[#0f3f8a] hover:underline no-underline px-1 sm:px-0"
+                                >
+                                    Rocket
+                                </Link>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
             </div>
 
-            <Header className="bg-blue-500 p-0">
-                <div className="flex justify-center items-center w-full">
-                    {/* Hamburger Icon for Mobile Only */}
-                    <div className="lg:hidden mr-4" onClick={toggleMenu}>
-                        <button className="text-white">
-                            ☰
-                        </button>
-                    </div>
-
-                    {/* Responsive Menu for Desktop and Mobile */}
-                    <Menu
-                        theme="light"
-                        mode="horizontal"
-                        selectedKeys={[current]} // Add selected key prop
-                        onClick={handleClick} // Add onClick handler
-                        className={`bg-green-500 text-black ${menuVisible ? 'block' : 'hidden'} lg:flex lg:justify-center w-full`}
-                    >
-                        <Menu.Item
-                            key="1"
-                            className={`flex-1 text-center px-12 py-1 ${current === '1' ? 'text-red-400' : 'text-black'} hover:bg-blue-700`} // Increased padding
-                        >
-                            <a className={`${current === '1' ? 'text-red-400' : 'text-black'} font-bold hover:text-white`} href="#home">Home</a>
-                        </Menu.Item>
-                        <Menu.Item
-                            key="2"
-                            className={`flex-1 text-center px-12 py-1 ${current === '2' ? 'text-red-400' : 'text-black'} hover:bg-blue-700`} // Increased padding
-                        >
-                            <a className={`${current === '2' ? 'text-red-400' : 'text-black'} font-bold hover:text-white`} href="#about">Physicians</a>
-                        </Menu.Item>
-                        <Menu.Item
-                            key="3"
-                            className={`flex-1 text-center px-12 py-1 ${current === '3' ? 'text-red-400' : 'text-black'} hover:bg-blue-700`} // Increased padding
-                        >
-                            <a className={`${current === '3' ? 'text-red-400' : 'text-black'} font-bold hover:text-white`} href="#service">Services</a>
-                        </Menu.Item>
-                        <Menu.Item
-                            key="4"
-                            className={`flex-1 text-center px-12 py-1 ${current === '4' ? 'text-red-400' : 'text-black'} hover:bg-blue-700`} // Increased padding
-                        >
-                            <a className={`${current === '4' ? 'text-red-400' : 'text-black'} font-bold hover:text-white`} href="#doctor">Patient Registration</a>
-                        </Menu.Item>
-                        <Menu.Item
-                            key="5"
-                            className={`flex-1 text-center px-12 py-1 ${current === '5' ? 'text-red-400' : 'text-black'} hover:bg-blue-700`} // Increased padding
-                        >
-                            <a className={`${current === '5' ? 'text-red-400' : 'text-black'} font-bold hover:text-white`} href="#pages">Education</a>
-                        </Menu.Item>
-                        <Menu.Item
-                            key="6"
-                            className={`flex-1 text-center px-12 py-1 ${current === '6' ? 'text-red-400' : 'text-black'} hover:bg-blue-700`} // Increased padding
-                        >
-                            <a className={`${current === '6' ? 'text-red-400' : 'text-black'} font-bold hover:text-white`} href="#blog">Locations/Directions</a>
-                        </Menu.Item>
-                    </Menu>
-                </div>
-            </Header>
-        </Layout>
+            {/* Navbar Section */}
+            <Navbar expand="lg" className="sticky-top bg-white shadow" expanded={expanded}>
+                <Container className="flex !justify-center md:!justify-between !important">
+                    <Navbar.Brand as={Link} to="/" className="justify-start hidden md:flex">
+                        <Image
+                            src={require('../assets/HKI-2019-Logo.png.webp')}
+                            alt="Logo"
+                            width="160"
+                            height="60"
+                        />
+                    </Navbar.Brand>
+                    <Navbar.Toggle
+                        aria-controls="basic-navbar-nav"
+                        onClick={() => setExpanded(!expanded)}
+                        className="block lg:hidden"     // mx-auto - for smaller devices
+                    />
+                    <Navbar.Collapse id="basic-navbar-nav"
+                        className="justify-center md:justify-end lg:justify-end">
+                        <Nav className="text-black font-bold">
+                            {mainLinks.map((link, index) => {
+                                if (link.isDropdown) {
+                                    return (
+                                        <NavDropdown title={<span className="text-black font-bold">{link.name}</span>} id={`dropdown-${index}`} className="px-3" key={index}>
+                                            {link.name === "Services" && servicesLinks.map((service, serviceIndex) => (
+                                                <NavDropdown.Item key={serviceIndex} as={Link} to={service.href} className="text-black font-bold" onClick={handleLinkClick}>
+                                                    {service.name}
+                                                </NavDropdown.Item>
+                                            ))}
+                                            {link.name === "Education" && educationLinks.map((education, educationIndex) => (
+                                                <NavDropdown.Item key={educationIndex} as={Link} to={education.href} className="text-black font-bold" onClick={handleLinkClick}>
+                                                    {education.name}
+                                                </NavDropdown.Item>
+                                            ))}
+                                        </NavDropdown>
+                                    );
+                                }
+                                return (
+                                    <Nav.Link key={index} as={Link} to={link.href} className="px-3 text-black font-bold" onClick={handleLinkClick}>
+                                        {link.name}
+                                    </Nav.Link>
+                                );
+                            })}
+                        </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
+        </>
     );
 };
 
-export default Navbar;
+export default CustomNavbar;
