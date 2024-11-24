@@ -1,7 +1,8 @@
 import React from 'react';
 import Colors from '../Components/Color';
+import BlogLocationPage from './BlogLocation';
 
-const Locations = () => {
+const DirectionPage = () => {
 
     const locations = [
         {
@@ -22,9 +23,19 @@ const Locations = () => {
     ];
 
     return (
-        <div className="py-10">
-            {/* Locations */}
+
+        <div className="min-h-screen px-4 py-10 sm:px-6 lg:px-8">
+            {/* Combined Office and Locations Information */}
             <div className="max-w-5xl mx-auto">
+                <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-4" style={{ color: Colors.headingBlue }}>Office</h2>
+                <p className=" mb-4" style={{ color: Colors.paragraphGray }}>
+                    Our clinics are conveniently located within driving distance to serve patients in N. Houston, Spring, Porter, Woodlands, Conroe. We use advanced tools in diagnosis & treatment to offer the best care you deserve.
+                </p>
+                <p className=" mb-4" style={{ color: Colors.paragraphGray }}>
+                    Come see us at one of our 3 convenient locations below.
+                </p>
+
+                {/* Locations */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-2">
                     {locations.map((location, index) => (
                         <div key={index} className="text-center mt-4">
@@ -49,9 +60,13 @@ const Locations = () => {
                     ))}
                 </div>
             </div>
-        </div>
 
+            <section>
+                <BlogLocationPage />
+            </section>
+
+        </div>
     );
 };
 
-export default Locations;
+export default DirectionPage;
